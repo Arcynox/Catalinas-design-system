@@ -17,14 +17,29 @@ Pure stdlib. Run: python3 build.py [--check]
 import argparse
 import json, re, sys
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from gen_extra import emit_wc, emit_swift, emit_compose, emit_tokens_md
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from gen_extra import emit_wc, emit_swift, emit_compose, emit_tokens_md
 
 ALL_TARGETS = ["css", "js", "qss", "py", "react", "flutter", "tailwind",
-               "flat", "docs", "tokens-css", "scss", "mjs", "dtcg", "snippets", "api", "rtl", "vue"]
-TARGETS_ORDER = ["Web CSS", "Web JS", "React", "Qt", "Flutter", "Tailwind", "Flat JSON"]
+               "flat", "docs", "tokens-css", "scss", "mjs", "dtcg", "snippets", "api", "rtl", "vue", "wc", "swift", "compose", "tokens-md"]
+TARGETS_ORDER = ["Web CSS", "Web JS", "React", "Vue 3", "Web Components", "Qt",
+                 "Flutter", "SwiftUI", "Compose", "Tailwind", "Figma DTCG", "Flat JSON"]
 argp = argparse.ArgumentParser()
 argp.add_argument("--targets", default="all",
                   help="coma-separado: " + ",".join(ALL_TARGETS))
+argp.add_argument("--watch", action="store_true",
+                  help="recompila cuando cambian tokens/ o spec/")
 args_cli = argp.parse_args()
+
+def _latest_mtime():
+    latest = 0
+    for d in ("tokens", "spec"):
+        dd = Path(__file__).resolve().parent.parent / d
+        for f in dd.glob("*.*"):
+            latest = max(latest, f.stat().st_mtime)
+    return latest
 SELECTED = ALL_TARGETS if args_cli.targets == "all" else [x.strip() for x in args_cli.targets.split(",")]
 wants = lambda name: name in SELECTED
 
@@ -918,6 +933,19 @@ if wants("api"):
     (api_dir / "api.json").write_text(json.dumps(api, ensure_ascii=False, indent=1))
     written.append("api/api.json")
 
+# ---------- Web Components ----------
+if wants("wc"):
+    emit_wc(ROOT, written)
+
+if wants("swift"):
+    emit_swift(ROOT, FLAT, written)
+
+if wants("compose"):
+    emit_compose(ROOT, FLAT, written)
+
+if wants("tokens-md"):
+    emit_tokens_md(ROOT, FLAT, written)
+
 # ---------- RTL (experimental) ----------
 if wants("rtl"):
     import re as _re
@@ -950,3 +978,19 @@ if wants("rtl"):
 print(f"catalinas build ok — {len(specs)} widgets, {len(FLAT)} tokens")
 for w in written:
     print("  +", w)
+
+if args_cli.watch:
+    import time
+    last = _latest_mtime()
+    print(f"watching tokens/ y spec/ (mtime {last:.0f})... Ctrl+C para salir")
+    try:
+        while True:
+            time.sleep(1.2)
+            now = _latest_mtime()
+            if now != last:
+                last = now
+                print("-> cambio detectado, recompilando...")
+                subprocess.run([sys.executable, __file__,
+                                "--targets", args_cli.targets], check=False)
+    except KeyboardInterrupt:
+        print("watch detenido")

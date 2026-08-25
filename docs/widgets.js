@@ -1,6 +1,6 @@
 /* generated */
 window.CATALINAS = {
- "version": "0.8.1",
+ "version": "0.10.0",
  "widgets": [
   {
    "name": "accordion",

@@ -52,13 +52,23 @@ python3 build/new_widget.py mi-widget         # scaffolder de widget nuevo
 
 React: `import { CatButton } from './web/catalinas.jsx'` · Vue: registrar `CatalinasVue`.
 
-### Qt / PySide6
+### Qt / PySide6 (adapter completo)
 
 ```python
-from qt import theme
-theme.load_qss(app)
-color = theme.get("color.accent.base")
+from qt.catalinas_qt import Cat, CatTheme
+cat = Cat(CatTheme(app))          # aplica tema + QSS
+
+btn = cat.button("Aceptar", variant="primary")
+side = cat.sidebar(["Documents", "Music"], active_index=0)
+sb = cat.statusbar("Sin seleccion", "67 files")
+win = cat.window("KittyDrive", kind="glass", sidebar=side, status=sb)
+
+cat.theme.set_accent("#ff5a76")   # re-theming runtime total
+CatalinasQt = cat.toasts(win)     # cola de toasts
+cat.command_palette(items)        # Ctrl+K dialog
 ```
+
+Tokens crudos: `theme.get("color.accent.base")`. Demo: `run_demo()` incluido.
 
 ### APIs de runtime (web)
 
@@ -83,6 +93,10 @@ Iconos: `<span data-cat-icon="folder"></span>` — providers: lucide (default), 
 | RTL experimental | `web/catalinas.rtl.css` |
 | Qt stylesheet + theme | `qt/catalinas.qss` + `qt/theme.py` |
 | Flutter theme | `flutter/catalinas_theme.dart` |
+| SwiftUI theme | `swiftui/CatalinasTheme.swift` |
+| Compose Multiplatform | `compose/CatalinasTheme.kt` |
+| Web Components runtime | `web/catalinas-wc.js` |
+| Tokens reference MD | `docs/tokens.md` |
 | Tailwind preset | `tailwind/catalinas.tw.js` |
 | Figma DTCG | `figma/tokens.tokens.json` |
 | VS Code snippets | `snippets/catalinas.json` |
