@@ -134,4 +134,5 @@ Pendientes: visual regression screenshots por demo, plugin interactivo de Figma,
 
 ## Licencia
 
-MIT con atribucion — libre para usar, modificar y distribuir manteniendo el credito **"Design System: Catalinas by Arcynox"**. Ver archivo [LICENSE](LICENSE).
+MIT con atribucion — libre para usar, modificar y distribuir manteniendo el credito 
+**"Design System: Catalinas by Arcynox"**. Ver archivo [LICENSE](LICENSE).
