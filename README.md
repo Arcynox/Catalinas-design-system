@@ -139,8 +139,28 @@ window.CatalinasIcons.use('tabler');
 
 Fuentes: overridear `--cat-font-family-ui`. El sistema completo sigue la familia elegida.
 
+## Skills para agentes IA
+
+El conocimiento del sistema esta empaquetado como 4 skills extensas para que
+cualquier agente (opencode, Claude, etc.) implemente el look Catalinas en web:
+
+| Skill | Contenido |
+|---|---|
+| `catalinas-web` | Master: filosofia, tokens, app shell, chrome, toolbar, sidebar, listas, status bar, cards |
+| `catalinas-tokens-theming` | 3 capas de tokens, derivacion accent-wallpaper, density, fuentes, iconos |
+| `catalinas-components` | Los 45 componentes con markup/css/estados + patron glider + checklist |
+| `catalinas-motion-a11y` | Motion tokens, reduced-motion, focus-visible, ARIA minimo, teclado |
+
+Instalar localmente:
+
+```bash
+python3 skills/install.py          # copia a ~/.agents/skills/
+# reiniciar sesion del agente para autodeteccion
+```
+
 ## Documentacion
 
+- Referencia de tokens generada: `docs/tokens.md`
 - Styleguide vivo con demos, guidance HIG y use cases: abrir `docs/index.html`
 - Ejemplo real armado solo con el sistema: `examples/kittydrive.html`
 
