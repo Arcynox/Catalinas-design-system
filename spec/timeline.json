@@ -1,0 +1,24 @@
+{
+ "name": "timeline",
+ "description": "Feed de actividad vertical con puntos y linea conectora.",
+ "targets": {
+  "web": {
+   "markup": "<ul class=\"cat-timeline\"><li><span class=\"dot\"></span><div><b>Sincronizacion</b> iniciada<span class=\"t\">hace 2 min</span></div></li><li><span class=\"dot done\"></span><div><b>Backup</b> completado<span class=\"t\">hace 1 h</span></div></li></ul>",
+   "css": [
+    "\n.cat-timeline{list-style:none;margin:0;padding:0;font-size:var(--cat-font-size-base);color:var(--cat-color-ink-mid)}\n.cat-timeline li{position:relative;display:flex;gap:12px;padding:0 0 18px 4px}\n.cat-timeline li:last-child{padding-bottom:0}\n.cat-timeline li::before{content:\"\";position:absolute;left:8.5px;top:16px;bottom:-2px;width:1.5px;background:var(--cat-color-stroke-dark)}\n.cat-timeline li:last-child::before{display:none}\n.cat-timeline .dot{flex:none;width:11px;height:11px;margin-top:5px;border-radius:50%;background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));box-shadow:0 0 0 3px var(--cat-color-accent-subtle-b)}\n.cat-timeline .dot.done{background:var(--cat-color-success);box-shadow:0 0 0 3px rgba(52,199,89,.15)}\n.cat-timeline b{font-weight:600;color:var(--cat-color-ink-hi)}\n.cat-timeline .t{display:block;font-size:var(--cat-font-size-xs);color:var(--cat-color-ink-faint);margin-top:1px}"
+   ]
+  },
+  "qt": {
+   "widget": "(custom)",
+   "qss": [
+    "QFrame[cat=\"timeline\"]{background:transparent}",
+    "QLabel[cat=\"tlDot\"]{background:{$color.accent.base$};border-radius:6px;max-width:11px;max-height:11px}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<ul class=\"cat-timeline\" style=\"width:300px\"><li><span class=\"dot\"></span><div><b>Sincronizacion iniciada</b> — 12 archivos<span class=\"t\">hace 2 min</span></div></li><li><span class=\"dot done\"></span><div><b>Backup completado</b> — 4.33 GB<span class=\"t\">hace 1 h</span></div></li><li><span class=\"dot done\"></span><div><b>Nuevo device vinculado</b><span class=\"t\">ayer</span></div></li></ul>"
+  ]
+ }
+}

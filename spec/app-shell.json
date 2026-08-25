@@ -1,0 +1,21 @@
+{
+ "name": "app-shell",
+ "description": "Layout de aplicacion completa: chrome + toolbar + sidebar + contenido + statusbar. Grid unico.",
+ "targets": {
+  "web": {
+   "markup": "<div class=\"cat-appshell\"><header class=\"cat-shell-chrome\"></header><div class=\"cat-shell-toolbar\"></div><div class=\"cat-shell-body\"><aside class=\"cat-sidebar\"></aside><main class=\"cat-shell-main\"></main></div><footer class=\"cat-statusbar\"></footer></div>",
+   "css": [
+    "\n.cat-appshell{display:flex;flex-direction:column;width:min(1040px,96vw);height:min(680px,92vh);border-radius:var(--cat-size-radius-window);background:var(--cat-semantic-glass-window,var(--cat-color-surface-glass-window));backdrop-filter:blur(var(--cat-blur-window)) saturate(var(--cat-blur-saturate-window));-webkit-backdrop-filter:blur(var(--cat-blur-window)) saturate(var(--cat-blur-saturate-window));border:1px solid var(--cat-color-stroke-light);box-shadow:var(--cat-elevation-window),inset 0 1px 0 rgba(255,255,255,.65);overflow:hidden;font-family:var(--cat-font-family-ui)}\n.cat-shell-chrome{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px 4px 14px}\n.cat-shell-toolbar{display:flex;align-items:center;gap:2px;margin:2px 14px 0;padding:5px 8px;border-radius:14px 14px 0 0;background:var(--cat-semantic-toolbar-bg);border:1px solid rgba(255,255,255,.42);border-bottom:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.55)}\n.cat-shell-body{flex:1;min-height:0;display:grid;grid-template-columns:216px 1fr;margin:0 14px;border-radius:0 0 var(--cat-size-radius-lg) var(--cat-size-radius-lg);background:var(--cat-color-surface-content);border:1px solid var(--cat-color-stroke-light);border-top:none;box-shadow:var(--cat-elevation-panel)}\n.cat-shell-body>.cat-sidebar{border-radius:0}\n.cat-shell-main{display:flex;flex-direction:column;min-width:0;background:transparent}\n.cat-appshell>.cat-statusbar{margin:0 14px 12px;border-radius:0 0 var(--cat-size-radius-md) var(--cat-size-radius-md)}"
+   ]
+  },
+  "qt": {
+   "widget": "QMainWindow + QSplitter",
+   "qss": []
+  }
+ },
+ "docs": {
+  "demos": [
+   "<div class=\"cat-appshell\" style=\"height:auto;min-height:300px\"><header class=\"cat-shell-chrome\"><div class=\"cat-tabs\"><button class=\"cat-tab is-active\">Documents</button><button class=\"cat-tab\">Music</button></div></header><div class=\"cat-shell-toolbar\"><span style=\"font-size:12px;font-weight:600;padding-left:4px\">Add New</span></div><div class=\"cat-shell-body\"><aside class=\"cat-sidebar\"><div class=\"cat-nav-item active\">Documents</div><div class=\"cat-nav-item\">Music</div></aside><main class=\"cat-shell-main\"><div class=\"file-scroll\" style=\"padding:10px 20px;font-size:13px;color:var(--cat-color-ink-mid)\">Contenido</div></main></div><footer class=\"cat-statusbar\"><span class=\"cat-status-title\">No file selected</span><span class=\"cat-status-count\">4 folders, 67 files</span></footer></div>"
+  ]
+ }
+}

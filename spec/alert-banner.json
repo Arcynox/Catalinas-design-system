@@ -1,0 +1,48 @@
+{
+ "name": "alert-banner",
+ "description": "Banner de estado con icono lider y tinte de fondo por severidad. Sin franjas laterales ni bordes semanticos.",
+ "states": [
+  "info",
+  "success",
+  "warning",
+  "danger",
+  "dismissed"
+ ],
+ "rules": [
+  "Severidad se comunica con ICONO LIDER + tinte sutil del contenedor.",
+  "Nunca usar barras o bordes laterales de color como unico carrier de severidad."
+ ],
+ "targets": {
+  "web": {
+   "markup": "<div class=\"cat-alert\"><span class=\"a-icon\"><svg width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 8h.01M12 11v5\"/></svg></span><div class=\"a-body\"><b>Title</b><span>Message</span></div><button class=\"t-close\" data-cat-dismiss=\".cat-alert\">x</button></div>",
+   "css": [
+    "\n.cat-alert{display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:var(--cat-size-radius-md);background:var(--cat-color-surface-card);border:1px solid var(--cat-color-stroke-dark);color:var(--cat-color-ink-hi);font-family:var(--cat-font-family-ui)}\n.cat-alert .a-icon{flex:none;width:21px;height:21px;border-radius:50%;display:grid;place-items:center;color:#fff}\n.cat-alert.info .a-icon{background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base))}\n.cat-alert.success .a-icon{background:var(--cat-color-success)}\n.cat-alert.warning .a-icon{background:var(--cat-color-warning)}\n.cat-alert.danger .a-icon{background:var(--cat-color-danger-base)}\n.cat-alert.info:not(:has(.a-icon)){background:var(--cat-color-accent-subtle-b)}\n.cat-alert.success:not(:has(.a-icon)){background:rgba(52,199,89,.10)}\n.cat-alert.warning:not(:has(.a-icon)){background:rgba(255,159,10,.12)}\n.cat-alert.danger:not(:has(.a-icon)){background:rgba(232,56,45,.09)}\n.cat-alert .a-body{flex:1;display:flex;flex-direction:column;gap:1px;min-width:0}\n.cat-alert .a-body b{font-size:var(--cat-font-size-base);font-weight:600}\n.cat-alert .a-body span{font-size:var(--cat-font-size-sm);color:var(--cat-color-ink-mid);line-height:1.4}\n.cat-alert .t-close{flex:none;margin-left:auto;background:none;border:none;color:var(--cat-color-ink-low);cursor:pointer;font-size:12px;padding:3px 6px;border-radius:4px;transition:all var(--cat-motion-fast)}\n.cat-alert .t-close:hover{background:var(--cat-color-surface-hover);color:var(--cat-color-ink-hi)}\n"
+   ]
+  },
+  "qt": {
+   "widget": "QFrame",
+   "qss": [
+    "QFrame[cat=\"alertInfo\"]{background:{$color.surface.card$};border:1px solid {$color.stroke.dark$};border-radius:{$size.radius.md$}}",
+    "QFrame[cat=\"alertDanger\"]{background:{$color.surface.card$};border:1px solid {$color.stroke.dark$};border-radius:{$size.radius.md$}}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<div class=\"cat-alert info\" style=\"width:400px\"><span class=\"a-icon\" style=\"background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base))\"><svg width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 8h.01M12 11v5\"/></svg></span><div class=\"a-body\"><b>Nuevo dispositivo</b><span>KittyDrive se conecto a tu laptop.</span></div><button class=\"t-close\" data-cat-dismiss=\".cat-alert\">x</button></div>",
+   "<div class=\"cat-alert success\" style=\"width:400px\"><span class=\"a-icon\" style=\"background:var(--cat-color-success)\"><svg width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 13l4 4 10-10\"/></svg></span><div class=\"a-body\"><b>Backup completo</b><span>4.33 GB sincronizados.</span></div><button class=\"t-close\" data-cat-dismiss=\".cat-alert\">x</button></div>",
+   "<div class=\"cat-alert warning\" style=\"width:400px\"><span class=\"a-icon\" style=\"background:var(--cat-color-warning)\"><svg width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 4L2 20h20z\"/><path d=\"M12 10v4m0 3h.01\"/></svg></span><div class=\"a-body\"><b>Espacio bajo</b><span>Quedan 12 GB en KittyDrive.</span></div><button class=\"t-close\" data-cat-dismiss=\".cat-alert\">x</button></div>"
+  ]
+ },
+ "guidance": {
+  "use": [
+   "Estado del sistema que el usuario debe notar sin bloquearlo."
+  ],
+  "avoid": [
+   "Feedback de una accion del usuario: eso es toast."
+  ],
+  "rules": [
+   "Severidad = icono lider + tinte sutil. Jamas franjas laterales."
+  ]
+ }
+}

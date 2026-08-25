@@ -1,0 +1,26 @@
+{
+ "name": "badge-tooltip-kbd-avatar",
+ "description": "Micro-componentes: badge, tooltip CSS-only, tecla, divisor y avatar.",
+ "targets": {
+  "web": {
+   "markup": "<span class=\"cat-badge accent\">New</span>",
+   "css": [
+    "\n.cat-badge{display:inline-flex;align-items:center;gap:5px;height:19px;padding:0 8px;border-radius:var(--cat-size-radius-pill);font:600 var(--cat-font-size-2xs) var(--cat-font-family-ui);letter-spacing:.03em;background:rgba(0,0,0,.07);color:var(--cat-color-ink-mid)}\n.cat-badge.accent{background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));color:#fff}\n.cat-badge.success{background:var(--cat-color-success);color:#fff}\n.cat-badge.danger{background:var(--cat-color-danger-base);color:#fff}\n.cat-badge .dot{width:7px;height:7px;border-radius:50%;background:currentColor}\n[data-cat-tooltip]{position:relative}\n[data-cat-tooltip]::after{content:attr(data-cat-tooltip);position:absolute;bottom:calc(100% + 7px);left:50%;transform:translateX(-50%) translateY(2px);padding:4px 9px;border-radius:var(--cat-size-radius-sm);background:var(--cat-color-ink-hi);color:#fff;font:500 var(--cat-font-size-xs) var(--cat-font-family-ui);white-space:nowrap;opacity:0;pointer-events:none;transition:opacity var(--cat-motion-fast) ease,transform var(--cat-motion-fast) var(--cat-motion-ease-out);z-index:var(--cat-depth-z-dropdown)}\n[data-cat-tooltip]:hover::after,[data-cat-tooltip]:focus-within::after{opacity:1;transform:translateX(-50%) translateY(0)}\n.cat-kbd{display:inline-block;padding:1px 6px;border-radius:var(--cat-size-radius-xs);border:1px solid var(--cat-color-stroke-dark);background:rgba(0,0,0,.05);box-shadow:inset 0 -1.5px 0 rgba(0,0,0,.08);font:500 var(--cat-font-size-xs) var(--cat-font-family-mono);color:var(--cat-color-ink-mid)}\n.cat-divider{height:1px;background:var(--cat-color-stroke-dark);border:none;margin:12px 0}\n.cat-divider.v{width:1px;height:18px;margin:0 8px;align-self:center}\n.cat-avatar{position:relative;width:32px;height:32px;border-radius:50%;background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));color:#fff;display:grid;place-items:center;font:600 var(--cat-font-size-sm) var(--cat-font-family-ui);overflow:visible}\n.cat-avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover}\n.cat-avatar .presence{position:absolute;bottom:-1px;right:-1px;width:10px;height:10px;border-radius:50%;background:var(--cat-color-success);border:2px solid #fff}"
+   ]
+  },
+  "qt": {
+   "widget": " QLabel helpers",
+   "qss": []
+  },
+  "docs_note": "Tooltip funciona sin JS vía ::after."
+ },
+ "docs": {
+  "demos": [
+   "<span class=\"cat-badge accent\">Beta</span> <span class=\"cat-badge success\"><span class=\"dot\"></span>Online</span> <span class=\"cat-badge\">v0.1</span>",
+   "<button class=\"cat-btn secondary\" data-cat-tooltip=\"¡Hola! Soy un tooltip\">Hover me</button>",
+   "<span class=\"cat-kbd\">Ctrl</span> <span class=\"cat-kbd\">K</span>",
+   "<hr class=\"cat-divider\" style=\"width:200px\">",
+   "<span class=\"cat-avatar\">LU<span class=\"presence\"></span></span>"
+  ]
+ }
+}

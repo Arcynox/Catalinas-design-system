@@ -1,0 +1,35 @@
+{
+ "name": "list-statusbar",
+ "description": "Lista agrupada editorial (headers + filas) y barra de estado contextual.",
+ "states": [
+  "row-default",
+  "row-hover",
+  "row-selected(accent fill)",
+  "group-head",
+  "statusbar-idle",
+  "statusbar-selection"
+ ],
+ "targets": {
+  "web": {
+   "markup": "<div class=\"cat-list\"><div class=\"cat-list-header\"><span>Name</span><span>Type</span><span>Date</span></div><div class=\"cat-group-head\">File Folders</div><div class=\"cat-row selected\"><span class=\"cell-name\">Design</span><span class=\"cell-type\">Folder</span><span class=\"cell-date\">Aug 22</span></div><div class=\"cat-row\"><span class=\"cell-name\">Fonts</span><span class=\"cell-type\">Folder</span><span class=\"cell-date\">Aug 19</span></div></div>",
+   "css": [
+    "\n.cat-list-header{display:grid;grid-template-columns:1.6fr 1fr 1fr;padding:10px 20px 8px;border-bottom:1px solid var(--cat-color-stroke-softer)}\n.cat-list-header span{font:500 var(--cat-font-size-xs) var(--cat-font-family-ui);letter-spacing:.04em;text-transform:uppercase;color:var(--cat-color-ink-low)}\n.cat-group-head{padding:16px 20px 6px;font:600 var(--cat-font-size-xs) var(--cat-font-family-ui);letter-spacing:.05em;text-transform:uppercase;color:var(--cat-color-ink-low)}\n.cat-row{display:grid;grid-template-columns:1.6fr 1fr 1fr;align-items:center;height:var(--cat-semantic-row-height,38px);padding:0 12px;margin:0 8px;border-radius:var(--cat-size-radius-sm);font-size:var(--cat-font-size-base);cursor:default;transition:background 100ms ease-out}\n.cat-row:nth-child(n) .cell-type,.cat-row .cell-date{font-size:var(--cat-font-size-sm);color:var(--cat-color-ink-mid);padding-right:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}\n.cell-name{color:var(--cat-color-ink-hi);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}\n.cat-row:hover{background:rgba(0,0,0,.04)}\n.cat-row.selected,.cat-row.is-selected{background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base))}\n.cat-row.selected .cell-name,.cat-row.selected .cell-type,.cat-row.selected .cell-date{color:var(--cat-color-surface-selected-on-accent)}\n.cat-statusbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:9px 18px;border-top:1px solid var(--cat-color-stroke-dark);background:rgba(255,255,255,.5);backdrop-filter:blur(12px);font-family:var(--cat-font-family-ui)}\n.cat-status-title{font-size:var(--cat-font-size-md);font-weight:var(--cat-font-weight-demibold);color:var(--cat-color-ink-hi)}\n.cat-status-meta{font-size:var(--cat-font-size-xs);color:var(--cat-color-ink-low)}\n.cat-status-count{font-size:var(--cat-font-size-xs);color:var(--cat-color-ink-mid)}"
+   ]
+  },
+  "qt": {
+   "widget": "QTreeWidget/QTableView",
+   "qss": [
+    "QTreeWidget{background:transparent;border:none;font-size:{$font.size.base$}}",
+    "QTreeWidget::item{height:34px;border-radius:{$size.radius.sm$}}",
+    "QTreeWidget::item:hover{background:rgba(0,0,0,12)}",
+    "QTreeWidget::item:selected{background:{$color.accent.base$};color:white}",
+    "QHeaderView::section{background:transparent;border:none;border-bottom:1px solid {$color.stroke.softer$};padding:6px 12px;font-size:{$font.size.xs$};font-weight:500;color:{$color.ink.low$}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<div class=\"cat-list\" style=\"max-width:520px\"><div class=\"cat-list-header\"><span>Name</span><span>Type</span><span>Date</span></div><div class=\"cat-group-head\">File Folders</div><div class=\"cat-row selected\"><span class=\"cell-name\">Design</span><span class=\"cell-type\">Folder</span><span class=\"cell-date\">Aug 22</span></div><div class=\"cat-row\"><span class=\"cell-name\">Fonts</span><span class=\"cell-type\">Folder</span><span class=\"cell-date\">Aug 19</span></div></div><hr class=\"cat-divider\"><footer class=\"cat-statusbar\" style=\"border-radius:10px\"><div><div class=\"cat-status-title\">Design</div><div class=\"cat-status-meta\">Folder · Aug 22, 2026</div></div><span class=\"cat-status-count\">1 selected</span></footer>"
+  ]
+ }
+}

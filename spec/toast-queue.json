@@ -1,0 +1,23 @@
+{
+ "name": "toast-queue",
+ "description": "API JS para cola de notificaciones: Catalinas.toast({tone,title,message,timeout}).",
+ "targets": {
+  "web": {
+   "markup": "<button class=\"cat-btn secondary sm\" data-cat-toast-demo=\"info\">Toast demo</button>",
+   "css": [
+    ".cat-toasts{position:fixed;top:16px;right:16px;z-index:var(--cat-depth-z-toast);display:flex;flex-direction:column;gap:8px;width:320px;max-width:calc(100vw - 32px);pointer-events:none}",
+    ".cat-toasts .cat-toast{pointer-events:auto}"
+   ]
+  },
+  "qt": {
+   "widget": "(QSystemTrayIcon / QFrame)",
+   "qss": []
+  }
+ },
+ "docs": {
+  "demos": [
+   "<button class=\"cat-btn secondary sm\" id=\"tgInfo\">Info</button> <button class=\"cat-btn success sm\" id=\"tgOk\">Exito</button> <button class=\"cat-btn danger sm\" id=\"tgErr\">Error</button>"
+  ],
+  "note": "Uso en app: Catalinas.toast({tone:'success', title:'Listo', message:'Backup completo', timeout:4000}). timeout:0 = sin auto-dismiss."
+ }
+}

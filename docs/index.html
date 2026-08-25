@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catalinas — Design System</title>
+<link rel="stylesheet" href="../web/catalinas.css?v=052">
+<style>
+  body{margin:0;min-height:100vh;font-family:var(--cat-font-family-ui);color:var(--cat-color-ink-hi);
+    background:linear-gradient(180deg,#f5f7fb 0%,#edf0f7 100%)}
+  .brandmark{width:26px;height:26px;border-radius:8px;background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));
+    display:grid;place-items:center;color:#fff;font-weight:700;font-size:13px}
+
+  .shell{display:flex;gap:26px;padding:24px 26px 60px;max-width:1340px;margin:0 auto;height:100vh;box-sizing:border-box}
+  aside{width:232px;flex:none;align-self:flex-start;height:calc(100vh - 48px);overflow:auto;
+    border-radius:var(--cat-size-radius-lg);background:var(--cat-color-surface-glass-window);
+    backdrop-filter:blur(40px) saturate(1.6);border:1px solid var(--cat-color-stroke-light);
+    box-shadow:var(--cat-elevation-panel);padding:14px 10px}
+  aside h1{font-size:14px;margin:2px 10px 0}
+  aside .sub{font-size:11px;color:var(--cat-color-ink-low);margin:2px 10px 12px}
+  .navgroup{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cat-color-ink-faint);padding:12px 10px 4px}
+  aside a{display:block;padding:5px 10px;border-radius:6px;font-size:12.5px;color:var(--cat-color-ink-mid);text-decoration:none}
+  aside a:hover{background:rgba(255,255,255,.55);color:var(--cat-color-ink-hi)}
+  aside a.active{background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));color:#fff;font-weight:600}
+
+  main{flex:1;min-width:0;display:flex;flex-direction:column;gap:18px;overflow:auto;padding-right:6px}
+  .panel{border-radius:var(--cat-size-radius-lg);background:var(--cat-color-surface-content);
+    border:1px solid var(--cat-color-stroke-light);box-shadow:var(--cat-elevation-panel);padding:24px 28px}
+  h2.stitle{font-size:16px;margin:0 0 4px;scroll-margin-top:16px}
+  .sdesc{color:var(--cat-color-ink-mid);font-size:13px;margin:0 0 14px;line-height:1.5}
+  .meta{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+  .meta span{font-size:10px;font-weight:600;letter-spacing:.03em;color:var(--cat-color-ink-low);
+    background:var(--cat-color-surface-hover);border-radius:99px;padding:2px 8px}
+
+  .preview{display:flex;flex-wrap:wrap;align-items:center;gap:14px;padding:24px;
+    justify-content:flex-start;border-radius:var(--cat-size-radius-md);
+    background-image:radial-gradient(circle at 1px 1px, rgba(0,0,0,.06) 1px, transparent 0);
+    background-size:16px 16px;border:1px solid var(--cat-color-stroke-softer);margin-bottom:10px}
+  .preview.col{flex-direction:column;align-items:center}
+  .preview>*{max-width:100%}
+  .preview.center-col{flex-direction:column}
+
+  details{margin-top:4px}
+  summary{cursor:pointer;font-size:10.5px;font-weight:600;color:var(--cat-color-ink-low);letter-spacing:.04em;text-transform:uppercase;width:fit-content}
+  summary:hover{color:var(--cat-color-ink-mid)}
+  pre{overflow:auto;background:#f4f5f9;border:1px solid rgba(0,0,0,.06);border-radius:8px;padding:10px 12px;
+    font:400 11.5px/1.55 var(--cat-font-family-mono);max-height:260px}
+
+  .tok-grid{display:flex;flex-wrap:wrap;gap:10px}
+  .tok{width:112px}
+  .tok .sw{height:42px;border-radius:8px;border:1px solid rgba(0,0,0,.08)}
+  .tok code{font-size:9.5px;color:var(--cat-color-ink-mid);word-break:break-all;display:block;margin-top:3px}
+
+  .guidance{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:12px}
+.guidance .gl{padding:10px 12px;border-radius:var(--cat-size-radius-md);background:var(--cat-semantic-panel-tint);border:1px solid var(--cat-color-stroke-softer)}
+.guidance b{display:block;font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--cat-color-ink-low);margin-bottom:5px}
+.guidance ul{margin:0;padding-left:14px}
+.guidance li{font-size:11.5px;line-height:1.5;color:var(--cat-color-ink-mid)}
+.playground{padding:16px;border-radius:var(--cat-size-radius-md);background:var(--cat-semantic-panel-tint);
+    border:1px dashed var(--cat-color-stroke-dark);margin-top:8px}
+  .pgrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+
+  .recipe-card{border:1px solid var(--cat-color-stroke-light);border-radius:var(--cat-size-radius-md);
+    overflow:hidden;background:var(--cat-color-surface-card)}
+  .recipe-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;border-bottom:1px solid var(--cat-color-stroke-softer)}
+  .recipe-head b{font-size:13px}
+  .recipe-body{padding:20px;display:flex;justify-content:center;background-image:radial-gradient(circle at 1px 1px, rgba(0,0,0,.05) 1px, transparent 0);background-size:16px 16px}
+
+  a.extlink{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--cat-color-accent-base);text-decoration:none}
+  @media(max-width:900px){aside{display:none}}
+</style>
+</head>
+<body>
+
+
+
+<div class="shell">
+  <aside>
+    <div style="display:flex;align-items:center;gap:9px;margin-bottom:2px">
+      <div class="brandmark">C</div>
+      <h1 style="margin:0;font-size:14px">Catalinas</h1>
+    </div>
+    <div class="sub" id="ver"></div>
+    <div style="display:flex;flex-wrap:wrap;gap:4px;margin:0 10px 10px" id="targetChips"></div>
+    <div class="navgroup">Foundations</div>
+    <a href="#tokens" data-nav>Tokens</a>
+    <a href="#derivation" data-nav>Derivación accent</a>
+    <a href="#theming" data-nav>Fuentes e iconos</a>
+    <div id="navlinks"></div>
+    <div class="navgroup">Use cases</div>
+    <div id="navRecipes"></div>
+    <div class="navgroup">Ejemplo real</div>
+    <a href="../examples/kittydrive.html" target="_blank">KittyDrive app →</a>
+  </aside>
+
+  <main>
+
+    <section class="panel" id="intro">
+      <h2 class="stitle" style="margin-top:0">Catalinas Design System</h2>
+      <p class="sdesc">Single source: <code>tokens.json + spec/*.json</code> → Web CSS/JS · React · Qt QSS/Python · Flutter · Tailwind · Flat JSON.
+      Los componentes nunca hardcodean valores: solo <code>var(--cat-*)</code>. Severidad con icono líder, nunca franjas laterales.
+      Ejemplo completo armado solo con el sistema: <a class="extlink" href="../examples/kittydrive.html" target="_blank">examples/kittydrive.html</a></p>
+    </section>
+
+    <section class="panel" id="tokens">
+      <h2 class="stitle">Tokens</h2>
+      <p class="sdesc">Colores del sistema (los semánticos derivan en runtime). 144 tokens totales.</p>
+      <div class="tok-grid" id="tokGrid"></div>
+    </section>
+
+    <section class="panel" id="derivation">
+      <h2 class="stitle">Derivación de accent</h2>
+      <p class="sdesc">El accent es un token semántico. En producción viene del hue dominante del wallpaper; acá lo movés a mano y todo el sistema reacciona.</p>
+      <div class="playground pgrow">
+        <input type="range" class="cat-slider accent" min="0" max="360" value="215" id="hue" style="width:240px">
+        <span style="font-size:12px;color:var(--cat-color-ink-mid)">hue: <b id="huev">215°</b></span>
+        <button class="cat-btn ghost sm" id="hueReset">Reset</button>
+      </div>
+    </section>
+
+    <section class="panel" id="theming">
+      <h2 class="stitle">Theming: fuentes e iconos</h2>
+      <p class="sdesc">Fuentes: override de <code>--cat-font-family-ui</code> (cargá la webfont que quieras). Iconos: <code>data-cat-icon</code> + <code>CatalinasIcons.use(provider)</code>.</p>
+
+      <div style="font-size:12px;font-weight:600;color:var(--cat-color-ink-low);margin:4px 0 6px">FUENTES</div>
+      <div class="playground" style="margin-bottom:18px">
+        <div class="cat-chips" data-cat-chips id="fontPicker">
+          <label class="chip active">System<input type="radio" name="fnt" value="" checked hidden></label>
+          <label class="chip">Inter<input type="radio" name="fnt" value="Inter:wght@400;500;600;700" hidden></label>
+          <label class="chip">Space Grotesk<input type="radio" name="fnt" value="Space+Grotesk:wght@400;500;600;700" hidden></label>
+        </div>
+        <p class="sample-text" style="font-size:15px;margin:12px 0 2px">The quick brown fox — 1234567890 — Áéíóú</p>
+        <p style="font-size:12px;color:var(--cat-color-ink-mid)">Así se ve el texto del sistema con la familia elegida.</p>
+      </div>
+
+      <div style="font-size:12px;font-weight:600;color:var(--cat-color-ink-low);margin:18px 0 6px">DENSIDAD</div>
+      <div class="playground">
+        <div class="cat-chips" data-cat-chips id="densityPicker">
+          <label class="chip">Compacta<input type="radio" name="den" value="compact" hidden></label>
+          <label class="chip active">Estandar<input type="radio" name="den" value="" checked hidden></label>
+          <label class="chip">Amplia<input type="radio" name="den" value="comfortable" hidden></label>
+        </div>
+        <p style="font-size:12px;color:var(--cat-color-ink-mid);margin-top:10px">Afecta alturas de controles y filas via tokens.</p>
+        <button class="cat-btn secondary sm" id="tryDensity" style="margin-top:8px">Probar boton</button>
+      </div>
+
+      <div style="font-size:12px;font-weight:600;color:var(--cat-color-ink-low);margin:4px 0 6px">ICONOS — packs por CDN</div>
+      <div class="playground" id="iconsPlay"></div>
+    </section>
+
+    <div id="widgets-root"></div>
+
+    <section class="panel" id="usecases-head">
+      <h2 class="stitle" style="margin-top:0">Use cases</h2>
+      <p class="sdesc">Composiciones reales armadas exclusivamente con clases <code>cat-</code>. Copiá el markup y ajustá tokens.</p>
+    </section>
+    <div id="recipes-root"></div>
+
+  </main>
+</div>
+
+<script src="tokens.js?v=052"></script>
+<script src="widgets.js?v=052"></script>
+<script src="recipes.js?v=052"></script>
+<script src="../web/catalinas.js?v=052"></script>
+<script>
+const $ = window.Catalinas.$, $$ = window.Catalinas.$$;
+
+$("#ver").textContent = "v" + window.CATALINAS.version + " · " + window.CATALINAS.widgets.length + " widgets";
+$("#targetChips").innerHTML = window.CATALINAS.targets.map(t => '<span class="tchip">' + t + '</span>').join("");
+
+/* hue */
+$("#hue").addEventListener("input", e => {
+  const h = +e.target.value;
+  $("#huev").textContent = h + "°";
+  document.documentElement.style.setProperty("--cat-semantic-accent-dynamic", `hsl(${h} 85% 60%)`);
+});
+$("#hueReset").addEventListener("click", () => {
+  document.documentElement.style.removeProperty("--cat-semantic-accent-dynamic");
+  $("#hue").value = 215; $("#huev").textContent = "215°";
+});
+
+/* fonts */
+let fontLink = null;
+$$("#fontPicker input").forEach(r => r.addEventListener("change", () => {
+  $$("#fontPicker label").forEach(l => l.classList.toggle("active", l.contains(r) && r.checked));
+  const fam = r.value;
+  if (fam) {
+    if (!fontLink) { fontLink = document.createElement("link"); fontLink.rel = "stylesheet"; fontLink.crossOrigin = "anonymous"; document.head.appendChild(fontLink); }
+    fontLink.href = "https://fonts.googleapis.com/css2?family=" + fam + "&display=swap";
+    const name = fam.split(":")[0].replace(/\+/g, " ");
+    document.documentElement.style.setProperty("--cat-font-family-ui", "'" + name + "', sans-serif");
+  } else {
+    if (fontLink) { fontLink.remove(); fontLink = null; }
+    document.documentElement.style.removeProperty("--cat-font-family-ui");
+  }
+}));
+
+/* densidad */
+$$("#densityPicker input").forEach(r => r.addEventListener("change", () => {
+  $$("#densityPicker label").forEach(l => l.classList.toggle("active", l.contains(r)));
+  if (r.value) document.documentElement.dataset.density = r.value;
+  else delete document.documentElement.dataset.density;
+}));
+
+/* icon picker (delegado, funciona con render dinamico) */
+document.addEventListener("click", e => {
+  const b = e.target.closest("#packPicker button");
+  if (!b || !window.CatalinasIcons) return;
+  $$("#packPicker button").forEach(x => x.classList.toggle("is-active", x === b));
+  window.CatalinasIcons.use(b.dataset.pack);
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const grid = $("#iconsPlay");
+  if (!grid || !window.CatalinasIcons) return;
+  const names = ["folder","doc","ppt","music","img","home","cloud","desktop","cat","net"];
+  let html = '<div class="cat-icon-picker" id="packPicker"><button type="button" data-pack="lucide" class="is-active">Lucide</button>'
+    + window.CatalinasIcons.providers.map(p => '<button type="button" data-pack="' + p + '">' + p[0].toUpperCase() + p.slice(1) + '</button>').join("")
+    + '</div><div class="cat-icons-grid" style="margin-top:14px">'
+    + names.map(k => '<div class="icell"><span data-cat-icon="' + k + '"></span><small>' + k + '</small></div>').join("")
+    + '</div>';
+  grid.innerHTML = html;
+});
+
+/* tokens */
+$("#tokGrid").innerHTML = Object.entries(window.CATALINAS_TOKENS)
+  .filter(([k]) => k.startsWith("--cat-color"))
+  .map(([k,v]) => {
+    const safe = /^(#[0-9a-f]{3,8}|rgb)/i.test(v.trim()) ? v.trim() : null;
+    return '<div class="tok"><div class="sw" style="background:' + (safe || "repeating-linear-gradient(45deg,#eee,#eee 4px,#fafafa 4px,#fafafa 8px)") + '"></div><code>' + k.replace("--cat-color-","") + '</code></div>';
+  }).join("");
+
+/* nav componentes */
+const CATS = {
+  "Acciones": ["button", "segmented", "menu", "dialog"],
+  "Entrada": ["input", "checkbox-radio", "switch", "slider", "rating", "dropzone", "file-chip", "color-picker"],
+  "Navegacion": ["tabs", "mobile-tabbar", "breadcrumb-toolbar", "sidebar-nav", "app-header", "pagination", "tree-view", "stepper"],
+  "Datos": ["list-statusbar", "table", "key-value-list", "meter", "filter-chips"],
+  "Feedback": ["progress-spinner-skeleton", "alert-banner", "card-toast", "empty-state", "timeline", "stat-card"],
+  "Superficies": ["windows", "carousel", "card-toast", "icons", "window-chrome", "app-shell"],
+  "Foundations": ["typography", "radius-scale"]
+};
+(function(){
+  const byName = {}; window.CATALINAS.widgets.forEach(w => byName[w.name] = w);
+  const used = new Set(); let html = "";
+  for (const [cat, names] of Object.entries(CATS)) {
+    html += '<div class="navgroup">' + cat + '</div>';
+    names.forEach(n => { if (byName[n]) { used.add(n); html += '<a href="#w-' + n + '" data-nav>' + n + '</a>'; } });
+  }
+  const rest = window.CATALINAS.widgets.filter(w => !used.has(w.name));
+  if (rest.length) {
+    html += '<div class="navgroup">Otros</div>';
+    rest.forEach(w => html += '<a href="#w-' + w.name + '" data-nav>' + w.name + '</a>');
+  }
+  $("#navlinks").innerHTML = html;
+})();
+
+/* widgets */
+$("#widgets-root").innerHTML = window.CATALINAS.widgets.map(w => {
+  const meta = [
+    w.states ? "states: " + w.states.join(" · ") : null,
+    w.props ? Object.entries(w.props).map(([k,v]) => k + ": " + v).join(" · ") : null,
+    w.targets && w.targets.qt ? "qt: " + w.targets.qt.widget : null,
+    w.has_js ? "js behavior" : null
+  ].filter(Boolean).map(m => "<span>" + m + "</span>").join("");
+  const isShell = w.name === "app-shell";
+  const demos = isShell
+    ? '<div class="preview col"><div class="cat-card chip" style="width:100%;display:flex;align-items:center;gap:10px;padding:12px">'
+      + '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/></svg>'
+      + '<span style="font-size:12.5px">Layout completo de app (chrome + toolbar + sidebar + contenido + statusbar)</span>'
+      + '<span class="spacer" style="flex:1"></span>'
+      + '<a class="extlink" href="../examples/kittydrive.html" target="_blank">Ver armado en KittyDrive →</a></div></div>'
+    : w.demos.map(d => '<div class="preview' + (d.length > 220 ? " col" : "") + '">' + d + "</div>").join("");
+  const g = w.guidance;
+  const guideHtml = g ? '<div class="guidance">'
+    + (g.use ? '<div class="gl"><b>Usalo para</b><ul>' + g.use.map(x=>'<li>'+x+'</li>').join("") + '</ul></div>' : "")
+    + (g.avoid ? '<div class="gl"><b>Evitalo si</b><ul>' + g.avoid.map(x=>'<li>'+x+'</li>').join("") + '</ul></div>' : "")
+    + (g.rules ? '<div class="gl"><b>Reglas</b><ul>' + g.rules.map(x=>'<li>'+x+'</li>').join("") + '</ul></div>' : "")
+    + '</div>' : "";
+  const code = (w.demos[0] || "").replace(/&/g,"&amp;").replace(/</g,"&lt;");
+  return '<section class="panel" id="w-' + w.name + '" style="scroll-margin-top:16px">'
+    + '<h2 class="stitle">' + w.name + '</h2>'
+    + '<p class="sdesc">' + (w.description || "") + '</p>'
+    + '<div class="meta">' + meta + '</div>'
+    + demos
+    + guideHtml
+    + (code ? '<details><summary>markup</summary><pre><code>' + code + '</code></pre></details>' : "")
+    + '</section>';
+}).join("");
+
+/* use cases */
+$("#recipes-root").innerHTML = window.CATALINAS_RECIPES.map((r,i) => {
+  const code = r.markup.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+  return '<section class="panel" id="recipe-' + i + '" style="scroll-margin-top:16px">'
+    + '<h2 class="stitle">' + r.name + '</h2>'
+    + '<p class="sdesc">' + r.description + '</p>'
+    + '<div class="meta">' + r.tags.map(t => "<span>" + t + "</span>").join("") + '</div>'
+    + '<div class="recipe-card"><div class="recipe-head"><b>' + r.name + '</b>'
+    + '<span style="font-size:10.5px;color:var(--cat-color-ink-low)">composición live</span></div>'
+    + '<div class="recipe-body">' + r.markup + '</div></div>'
+    + '<details><summary>markup</summary><pre><code>' + code + '</code></pre></details>'
+    + '</section>';
+}).join("");
+$("#navRecipes").innerHTML = window.CATALINAS_RECIPES.map((r,i) => '<a href="#recipe-' + i + '" data-nav>' + r.name + '</a>').join("");
+
+/* demos interactivos: toasts + cmdk */
+document.addEventListener("click", e => {
+  const t = e.target.closest("#tgInfo,#tgOk,#tgErr");
+  if (t && window.Catalinas) {
+    const tone = t.id === "tgInfo" ? "info" : t.id === "tgOk" ? "success" : "danger";
+    window.Catalinas.toast({ tone, title: tone.toUpperCase(),
+      message: "Mensaje de ejemplo desde Catalinas.toast()", timeout: 4000 });
+  }
+  if (e.target.closest("#demoCmdkBtn") && window.Catalinas) {
+    window.Catalinas.palette([
+      { label: "Nuevo archivo", kbd: "N" },
+      { label: "Abrir reciente", kbd: "Ctrl+O" },
+      { label: "Compartir", kbd: "Ctrl+S" },
+      { label: "Eliminar", kbd: "Del" }
+    ]);
+  }
+});
+
+/* scrollspy */
+const links = $$("aside a[data-nav]");
+addEventListener("scroll", () => {
+  let cur = null;
+  $$("[id]").forEach(sec => {
+    if (sec.getBoundingClientRect().top < 120) cur = sec.id;
+  });
+  links.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + cur));
+}, { passive: true });
+</script>
+</body>
+</html>

@@ -1,0 +1,863 @@
+{
+ "$schema": "https://catalinas.dev/api.schema.json",
+ "version": "0.8.1",
+ "counts": {
+  "widgets": 45,
+  "tokens": 147
+ },
+ "targets": [
+  "Web CSS",
+  "Web JS",
+  "React",
+  "Qt",
+  "Flutter",
+  "Tailwind",
+  "Flat JSON"
+ ],
+ "widgets": [
+  {
+   "name": "accordion",
+   "description": "Colapsable nativo <details>, sin JS.",
+   "anatomy": null,
+   "props": null,
+   "states": [
+    "open",
+    "closed",
+    "hover"
+   ],
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "alert-banner",
+   "description": "Banner de estado con icono lider y tinte de fondo por severidad. Sin franjas laterales ni bordes semanticos.",
+   "anatomy": null,
+   "props": null,
+   "states": [
+    "info",
+    "success",
+    "warning",
+    "danger",
+    "dismissed"
+   ],
+   "variants": null,
+   "guidance": {
+    "use": [
+     "Estado del sistema que el usuario debe notar sin bloquearlo."
+    ],
+    "avoid": [
+     "Feedback de una accion del usuario: eso es toast."
+    ],
+    "rules": [
+     "Severidad = icono lider + tinte sutil. Jamas franjas laterales."
+    ]
+   },
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "app-header",
+   "description": "Barra superior de aplicacion: marca, navegacion y acciones.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "app-shell",
+   "description": "Layout de aplicacion completa: chrome + toolbar + sidebar + contenido + statusbar. Grid unico.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "avatar-group",
+   "description": "Stack de avatares con overlap y contador restante.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "badge-tooltip-kbd-avatar",
+   "description": "Micro-componentes: badge, tooltip CSS-only, tecla, divisor y avatar.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "docs_note",
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "breadcrumb-toolbar",
+   "description": "Ruta jerárquica + banda de acciones con gradiente de identidad.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "button",
+   "description": "Acción primaria, secundaria, fantasma, peligrosa o enlace.",
+   "anatomy": [
+    "container",
+    "label",
+    "icon"
+   ],
+   "props": {
+    "variant": "primary|secondary|ghost|danger|link",
+    "size": "sm|md|lg",
+    "icon": "optional",
+    "loading": "bool",
+    "disabled": "bool"
+   },
+   "states": [
+    "default",
+    "hover",
+    "active",
+    "focus-visible",
+    "disabled"
+   ],
+   "variants": null,
+   "guidance": {
+    "use": [
+     "Accion principal de una vista: una sola primary por pantalla.",
+     "Danger solo para acciones destructivas e irreversibles."
+    ],
+    "avoid": [
+     "Botones ghost para acciones criticas: poca affordance.",
+     "Tres o mas botones en fila: convertilo en menu."
+    ],
+    "rules": [
+     "Orden HIG: primario a la derecha en dialogos, a la izquierda en toolbars.",
+     "Loading deshabilita el boton; nunca doble submit."
+    ]
+   },
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "card-toast",
+   "description": "Superficies por nivel de profundidad + notificaciones descartables.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "carousel",
+   "description": "Carrusel horizontal con scroll-snap y flechas prev/next.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "checkbox-radio",
+   "description": "Selección múltiple y exclusiva.",
+   "anatomy": null,
+   "props": null,
+   "states": [
+    "checked",
+    "focus-visible",
+    "disabled"
+   ],
+   "variants": null,
+   "guidance": {
+    "use": [
+     "Checkbox: seleccion multiple pendiente de confirmar.",
+     "Radio: 2-5 opciones exclusivas visibles de una vez."
+    ],
+    "avoid": [
+     "Radio con mas de 5 opciones: usa select o segmented."
+    ],
+    "rules": [
+     "Un grupo de radios nunca empieza sin opcion marcada si la eleccion es requerida."
+    ]
+   },
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "color-picker",
+   "description": "Seleccion de accent para todo el sistema: swatches + auto (derivado del wallpaper).",
+   "anatomy": null,
+   "props": null,
+   "states": [
+    "default",
+    "hover",
+    "active"
+   ],
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "web"
+   ]
+  },
+  {
+   "name": "command-palette",
+   "description": "Palette de comandos global (Ctrl+K / Cmd+K). Busca, navega con flechas, ejecuta con Enter.",
+   "anatomy": [
+    "overlay",
+    "panel",
+    "input",
+    "results",
+    "foot"
+   ],
+   "props": null,
+   "states": [
+    "closed",
+    "open",
+    "filtering",
+    "active-item"
+   ],
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "dialog",
+   "description": "Modal nativo <dialog> con backdrop blur. Foco y ESC gratis.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": {
+    "use": [
+     "Decisiones irreversibles o informacion que bloquea la tarea."
+    ],
+    "avoid": [
+     "Formularios largos: mejor una ventana propia."
+    ],
+    "rules": [
+     "Un solo primary; cancelar siempre visible. ESC cierra."
+    ]
+   },
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "dropzone",
+   "description": "Zona de carga drag and drop. Visual puro; estado :drag-over via clase .over (JS del host).",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "empty-state",
+   "description": "Estado vacio: orbe con icono, titulo, descripcion y accion primaria.",
+   "anatomy": [
+    "orb",
+    "title",
+    "message",
+    "action"
+   ],
+   "props": null,
+   "states": [
+    "default",
+    "hover(action)"
+   ],
+   "variants": null,
+   "guidance": {
+    "use": [
+     "Primer uso y resultados vacios: ensena el proximo paso."
+    ],
+    "avoid": [
+     "Culpar al usuario; tono neutro y accion claro."
+    ],
+    "rules": [
+     "Orbe + titulo corto + una sola accion primary."
+    ]
+   },
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "file-chip",
+   "description": "Chip de archivo adjunto/subido: icono, nombre, peso, remover.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "filter-chips",
+   "description": "Chips de filtro multi-seleccion con estado activo accent.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "form-validation",
+   "description": "Validacion declarativa: required/email/minLength via atributos. Errores inline y evento cat:valid.",
+   "anatomy": null,
+   "props": null,
+   "states": [
+    "valid",
+    "error-inline",
+    "submitted-invalid"
+   ],
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "icons",
+   "description": "Iconos themable con runtime CatalinasIcons. Default: Lucide (SVG). Alternativas por CDN webfont.",
+   "anatomy": null,
+   "props": {
+    "provider": "lucide|remix|tabler|fa|phosphor",
+    "name": "folder|doc|ppt|music|img|home|cloud|desktop|cat|net"
+   },
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "web"
+   ]
+  },
+  {
+   "name": "input",
+   "description": "Campo de texto, con icono opcional y estado de error.",
+   "anatomy": [
+    "wrapper",
+    "input",
+    "icon",
+    "label",
+    "message"
+   ],
+   "props": null,
+   "states": [
+    "default",
+    "placeholder",
+    "focus",
+    "error",
+    "disabled"
+   ],
+   "variants": null,
+   "guidance": {
+    "use": [
+     "Datos cortos con formato predecible (email, busqueda, nombre)."
+    ],
+    "avoid": [
+     "Placeholders como unica etiqueta: desaparecen al escribir."
+    ],
+    "rules": [
+     "Errores inline bajo el campo, nunca dialogs.",
+     "Icono lider solo cuando ayuda al scanning (busqueda)."
+    ]
+   },
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "key-value-list",
+   "description": "Lista definicion clave/valor para metadata y propiedades.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "list-statusbar",
+   "description": "Lista agrupada editorial (headers + filas) y barra de estado contextual.",
+   "anatomy": null,
+   "props": null,
+   "states": [
+    "row-default",
+    "row-hover",
+    "row-selected(accent fill)",
+    "group-head",
+    "statusbar-idle",
+    "statusbar-selection"
+   ],
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "menu",
+   "description": "Dropdown flotante nivel depth.dropdown. Trigger por data-attr.",
+   "anatomy": null,
+   "props": null,
+   "states": [
+    "open",
+    "item-hover(accent fill HIG)",
+    "item-checked",
+    "kbd-hint"
+   ],
+   "variants": null,
+   "guidance": {
+    "use": [
+     "Acciones secundarias que no merecen espacio permanente."
+    ],
+    "avoid": [
+     "Acciones frecuentes: quedan en toolbar."
+    ],
+    "rules": [
+     "Abre hacia arriba automaticamente si falta espacio abajo.",
+     "Items con shortcut muestran kbd a la derecha."
+    ]
+   },
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "meter",
+   "description": "Medidor semantico (disco, RAM): verde/amarillo/rojo segun umbral.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "mobile-tabbar",
+   "description": "Barra de navegacion inferior para movil: glass con blur, item activo accent.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "pagination",
+   "description": "Paginador compacto con estados activo/disabled.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "progress-spinner-skeleton",
+   "description": "Indicadores de progreso determinado, indeterminado y carga.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": {
+    "use": [
+     "Progress bar: duracion conocida. Spinner: desconocida y corta. Skeleton: layout predecible."
+    ],
+    "avoid": [
+     "Spinner para esperas mayores a 3s con progreso medible."
+    ],
+    "rules": [
+     "Indeterminado comunica vida, no progreso real."
+    ]
+   },
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "radius-scale",
+   "description": "Escala de radios sobre gris neutro, para elegir el correcto por superficie.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "rating",
+   "description": "Estrellas interactivas CSS-only via radios.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "segmented",
+   "description": "Control segmentado estilo macOS. CSS-only via radios (accesible).",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": {
+    "use": [
+     "Cambiar modo de vista de un mismo contenido."
+    ],
+    "avoid": [
+     "Destinos de navegacion distintos: tabs."
+    ],
+    "rules": [
+     "2-5 segmentos; textos cortos, nunca iconos solos si son ambiguos."
+    ]
+   },
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "sidebar-nav",
+   "description": "Navegación lateral con item activo lleno (Finder-style) y árbol expandible.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": {
+    "use": [
+     "Navegacion primaria persistente entre vistas."
+    ],
+    "avoid": [
+     "Mas de ~8 items de primer nivel: agrupa en secciones."
+    ],
+    "rules": [
+     "Item activo lleno con accent; icono hereda blanco."
+    ]
+   },
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "slider",
+   "description": "Range nativo con thumb grande (zona táctil > visual, spec §40).",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": {
+    "use": [
+     "Valores continuos donde la precision exacta no es critica (volumen, brillo)."
+    ],
+    "avoid": [
+     "Rangos discretos largos: mejor select."
+    ],
+    "rules": [
+     "Thumb grande: la zona interactiva supera al elemento visual."
+    ]
+   },
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "sparkline",
+   "description": "Grafico SVG minimo: linea o barras desde data-values. Cero dependencias.",
+   "anatomy": null,
+   "props": {
+    "data-cat-spark": "valores CSV",
+    "data-spark-type": "line | bars",
+    "data-width / data-height": "px"
+   },
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "stat-card",
+   "description": "KPI card: label, valor grande, delta con direccion.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "stepper",
+   "description": "Pasos numerados conectados: done / active / pendiente.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "switch",
+   "description": "Toggle binario estilo macOS. CSS puro sobre checkbox nativo (accesible).",
+   "anatomy": null,
+   "props": null,
+   "states": [
+    "checked",
+    "unchecked",
+    "focus-visible",
+    "disabled"
+   ],
+   "variants": null,
+   "guidance": {
+    "use": [
+     "Preferencias que aplican INMEDIATAMENTE al togglear."
+    ],
+    "avoid": [
+     "Opciones que requieren confirmar con un boton: usa checkbox."
+    ],
+    "rules": [
+     "Label siempre a la izquierda del control en listas de ajustes."
+    ]
+   },
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "table",
+   "description": "Tabla de datos: header secundario uppercase, hover suave, fila seleccionada en accent.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": {
+    "use": [
+     "Comparacion escaneable de muchos registros homogeneos."
+    ],
+    "avoid": [
+     "Menos de 3 filas: lista simple."
+    ],
+    "rules": [
+     "Header secundario uppercase; seleccion llena con accent."
+    ]
+   },
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "tabs",
+   "description": "Pestañas chip aqua + paneles sincronizados por data-attrs.",
+   "anatomy": null,
+   "props": null,
+   "states": [
+    "active(aqua chip)",
+    "inactive",
+    "hover"
+   ],
+   "variants": null,
+   "guidance": {
+    "use": [
+     "Cambiar de contexto o documento sin perder el lugar."
+    ],
+    "avoid": [
+     "Pasos secuenciales de un flujo: eso es stepper."
+    ],
+    "rules": [
+     "Tab activo claramente elevado; nunca dos activos."
+    ]
+   },
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "timeline",
+   "description": "Feed de actividad vertical con puntos y linea conectora.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "toast-queue",
+   "description": "API JS para cola de notificaciones: Catalinas.toast({tone,title,message,timeout}).",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "tree-view",
+   "description": "Arbol jerarquico en contenido (no sidebar). Expand/collapse nativo via details-like con JS minimo opcional.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "typography",
+   "description": "Escala textual, estados y resaltado tipo seleccion (.cat-mark).",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "web"
+   ]
+  },
+  {
+   "name": "window-chrome",
+   "description": "Ventana acrilica: tabs integrados + controles minimizar, maximizar y cerrar con hover rojo.",
+   "anatomy": null,
+   "props": null,
+   "states": null,
+   "variants": null,
+   "guidance": {
+    "use": [
+     "Ventanas de nivel app sobre el escritorio."
+    ],
+    "avoid": [
+     "Controles dentro de cards embebidas."
+    ],
+    "rules": [
+     "Cerrar con hover rojo: convencion de destruccion."
+    ]
+   },
+   "targets": [
+    "note",
+    "qt",
+    "web"
+   ]
+  },
+  {
+   "name": "windows",
+   "description": "Ventanas de nivel app en dos materiales: Desktop (vidrio acrilico) y Normal (solida). Ambas con barra de control.",
+   "anatomy": [
+    "frame",
+    "bar(title + controls)",
+    "body"
+   ],
+   "props": null,
+   "states": [
+    "desktop-glass",
+    "standard-solid"
+   ],
+   "variants": null,
+   "guidance": null,
+   "targets": [
+    "qt",
+    "web"
+   ]
+  }
+ ]
+}

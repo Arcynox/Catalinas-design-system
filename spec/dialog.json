@@ -1,0 +1,34 @@
+{
+ "name": "dialog",
+ "description": "Modal nativo <dialog> con backdrop blur. Foco y ESC gratis.",
+ "targets": {
+  "web": {
+   "markup": "<dialog class=\"cat-dialog\"><h3>Titulo</h3><p>Contenido</p><form method=\"dialog\"><button class=\"cat-btn primary\">OK</button></form></dialog>",
+   "css": [
+    "\n.cat-dialog{border:none;border-radius:var(--cat-size-radius-lg);background:var(--cat-color-surface-content);backdrop-filter:blur(var(--cat-blur-window)) saturate(var(--cat-blur-saturate-window));-webkit-backdrop-filter:blur(var(--cat-blur-window)) saturate(var(--cat-blur-saturate-window));box-shadow:var(--cat-elevation-window);padding:22px 24px;min-width:320px;max-width:min(92vw,480px);font-family:var(--cat-font-family-ui);color:var(--cat-color-ink-hi)}\n.cat-dialog::backdrop{background:rgba(10,12,24,.38);backdrop-filter:blur(6px)}\n.cat-dialog h3{margin:0 0 8px;font-size:var(--cat-font-size-xl)}\n.cat-dialog p{margin:0 0 18px;color:var(--cat-color-ink-mid);font-size:var(--cat-font-size-base);line-height:1.5}\n.cat-dialog .actions{display:flex;justify-content:flex-end;gap:8px}"
+   ]
+  },
+  "qt": {
+   "widget": "QDialog",
+   "qss": [
+    "QDialog{background:{$color.surface.content$};border-radius:{$size.radius.lg$}}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<button class=\"cat-btn secondary\" onclick=\"dlgDemo.showModal()\">Abrir dialog</button><dialog class=\"cat-dialog\" id=\"dlgDemo\"><h3>Eliminar archivo</h3><p>Esta accion no se puede deshacer.</p><div class=\"actions\"><form method=\"dialog\"><button class=\"cat-btn ghost\">Cancelar</button></form><form method=\"dialog\"><button class=\"cat-btn danger\">Eliminar</button></form></div></dialog>"
+  ]
+ },
+ "guidance": {
+  "use": [
+   "Decisiones irreversibles o informacion que bloquea la tarea."
+  ],
+  "avoid": [
+   "Formularios largos: mejor una ventana propia."
+  ],
+  "rules": [
+   "Un solo primary; cancelar siempre visible. ESC cierra."
+  ]
+ }
+}

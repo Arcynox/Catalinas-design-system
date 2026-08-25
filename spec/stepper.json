@@ -1,0 +1,21 @@
+{
+ "name": "stepper",
+ "description": "Pasos numerados conectados: done / active / pendiente.",
+ "targets": {
+  "web": {
+   "markup": "<ol class=\"cat-stepper\"><li class=\"done\"><span>1</span>Cuenta</li><li class=\"active\"><span>2</span>Datos</li><li><span>3</span>Confirmar</li></ol>",
+   "css": [
+    "\n.cat-stepper{display:flex;align-items:center;list-style:none;margin:0;padding:0;font:400 var(--cat-font-size-sm) var(--cat-font-family-ui);color:var(--cat-color-ink-low)}\n.cat-stepper li{display:flex;align-items:center;gap:8px}\n.cat-stepper li:not(:last-child)::after{content:\"\";width:42px;height:1.5px;background:var(--cat-color-stroke-dark);margin:0 12px}\n.cat-stepper span{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--cat-color-stroke-input);background:rgba(255,255,255,.6);font-size:11px;font-weight:600;color:var(--cat-color-ink-mid)}\n.cat-stepper li.done span{background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));border-color:transparent;color:#fff}\n.cat-stepper li.done::after{background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base))}\n.cat-stepper li.done{color:var(--cat-color-ink-hi)}\n.cat-stepper li.active{color:var(--cat-color-ink-hi);font-weight:600}\n.cat-stepper li.active span{border-color:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));color:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base))}"
+   ]
+  },
+  "qt": {
+   "widget": "(custom)",
+   "qss": []
+  }
+ },
+ "docs": {
+  "demos": [
+   "<ol class=\"cat-stepper\"><li class=\"done\"><span>1</span>Cuenta</li><li class=\"active\"><span>2</span>Datos</li><li><span>3</span>Confirmar</li></ol>"
+  ]
+ }
+}

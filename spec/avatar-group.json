@@ -1,0 +1,21 @@
+{
+ "name": "avatar-group",
+ "description": "Stack de avatares con overlap y contador restante.",
+ "targets": {
+  "web": {
+   "markup": "<div class=\"cat-avgroup\"><span class=\"cat-avatar\">LU</span><span class=\"cat-avatar\">MI</span><span class=\"cat-avatar\">CO</span><span class=\"cat-avatar more\">+5</span></div>",
+   "css": [
+    "\n.cat-avgroup{display:flex}\n.cat-avgroup .cat-avatar{width:32px;height:32px;border-radius:50%;background:var(--cat-color-ink-low);color:#fff;display:grid;place-items:center;font:600 var(--cat-font-size-sm) var(--cat-font-family-ui);border:2px solid var(--cat-color-surface-content);margin-left:-8px}\n.cat-avgroup .cat-avatar:first-child{margin-left:0}\n.cat-avgroup .cat-avatar:nth-child(1){background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base))}\n.cat-avgroup .cat-avatar:nth-child(2){background:var(--cat-color-violet)}\n.cat-avgroup .cat-avatar:nth-child(3){background:var(--cat-color-ppt)}\n.cat-avgroup .more{background:var(--cat-color-surface-hover);color:var(--cat-color-ink-mid);font-size:10px}"
+   ]
+  },
+  "qt": {
+   "widget": "QLabel row",
+   "qss": []
+  }
+ },
+ "docs": {
+  "demos": [
+   "<div class=\"cat-avgroup\"><span class=\"cat-avatar\">LU</span><span class=\"cat-avatar\">MI</span><span class=\"cat-avatar\">CO</span><span class=\"cat-avatar more\">+5</span></div>"
+  ]
+ }
+}

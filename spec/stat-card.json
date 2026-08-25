@@ -1,0 +1,23 @@
+{
+ "name": "stat-card",
+ "description": "KPI card: label, valor grande, delta con direccion.",
+ "targets": {
+  "web": {
+   "markup": "<div class=\"cat-stat\"><span class=\"label\">Ingresos</span><span class=\"value\">$12.4K</span><span class=\"delta up\">+8.2%</span></div>",
+   "css": [
+    "\n.cat-stat{display:flex;flex-direction:column;gap:2px;padding:14px 16px;border-radius:var(--cat-size-radius-md);background:var(--cat-color-surface-card);border:1px solid var(--cat-color-stroke-dark);min-width:130px;font-family:var(--cat-font-family-ui)}\n.cat-stat .label{font-size:var(--cat-font-size-xs);font-weight:500;color:var(--cat-color-ink-low)}\n.cat-stat .value{font-size:var(--cat-font-size-2xl);font-weight:650;color:var(--cat-color-ink-hi);letter-spacing:-.02em}\n.cat-stat .delta{font-size:var(--cat-font-size-xs);font-weight:600}\n.cat-stat .delta.up{color:var(--cat-color-success)}\n.cat-stat .delta.down{color:var(--cat-color-danger-base)}"
+   ]
+  },
+  "qt": {
+   "widget": "QFrame",
+   "qss": [
+    "QFrame[cat=\"stat\"]{background:{$color.surface.card$};border:1px solid {$color.stroke.dark$};border-radius:{$size.radius.md$}}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<div style=\"display:flex;gap:10px\"><div class=\"cat-stat\"><span class=\"label\">Ingresos</span><span class=\"value\">$12.4K</span><span class=\"delta up\">+8.2%</span></div><div class=\"cat-stat\"><span class=\"label\">Churn</span><span class=\"value\">2.1%</span><span class=\"delta down\">+0.4%</span></div><div class=\"cat-stat\"><span class=\"label\">Activos</span><span class=\"value\">324</span><span class=\"delta up\">+12</span></div></div>"
+  ]
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "name": "dropzone",
+ "description": "Zona de carga drag and drop. Visual puro; estado :drag-over via clase .over (JS del host).",
+ "targets": {
+  "web": {
+   "markup": "<label class=\"cat-dropzone\"><input type=\"file\" multiple hidden><b>Solta archivos aca</b><span>o hace clic para elegir</span></label>",
+   "css": [
+    "\n.cat-dropzone{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:110px;padding:20px;border:1.5px dashed var(--cat-color-stroke-input);border-radius:var(--cat-size-radius-lg);background:rgba(255,255,255,.25);cursor:pointer;text-align:center;font-family:var(--cat-font-family-ui);transition:all var(--cat-motion-med) var(--cat-motion-ease-out)}\n.cat-dropzone b{font-size:var(--cat-font-size-base);color:var(--cat-color-ink-hi);font-weight:600}\n.cat-dropzone span{font-size:var(--cat-font-size-sm);color:var(--cat-color-ink-low)}\n.cat-dropzone:hover,.cat-dropzone.over{border-color:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));background:var(--cat-color-accent-subtle-a)}"
+   ]
+  },
+  "qt": {
+   "widget": "(custom)",
+   "qss": []
+  }
+ },
+ "docs": {
+  "demos": [
+   "<label class=\"cat-dropzone\" style=\"width:380px\"><input type=\"file\" multiple hidden><b>Solta archivos aca</b><span>o hace clic para elegir</span></label>"
+  ]
+ }
+}

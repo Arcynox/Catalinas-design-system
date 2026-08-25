@@ -1,0 +1,60 @@
+{
+ "name": "input",
+ "description": "Campo de texto, con icono opcional y estado de error.",
+ "anatomy": [
+  "wrapper",
+  "input",
+  "icon",
+  "label",
+  "message"
+ ],
+ "states": [
+  "default",
+  "placeholder",
+  "focus",
+  "error",
+  "disabled"
+ ],
+ "targets": {
+  "web": {
+   "markup": "<div class=\"cat-field\"><label class=\"cat-label\">Name</label><div class=\"cat-input\"><input class=\"el\" placeholder=\"Placeholder\"></div></div>",
+   "css": [
+    "\n.cat-field{display:flex;flex-direction:column;gap:4px;font-family:var(--cat-font-family-ui)}\n.cat-label{font-size:var(--cat-font-size-xs);font-weight:var(--cat-font-weight-medium);color:var(--cat-color-ink-mid)}\n.cat-input{position:relative;display:flex;align-items:center}\n.cat-input>.el{width:100%;height:var(--cat-size-control-h-md);padding:0 12px;border-radius:10px;border:1px solid var(--cat-color-stroke-input);background:var(--cat-semantic-input-a);box-shadow:var(--cat-elevation-chip-hover);font:400 var(--cat-font-size-md) var(--cat-font-family-ui);color:var(--cat-color-ink-hi);outline:none;transition:border-color var(--cat-motion-med) ease,background var(--cat-motion-med) ease,box-shadow var(--cat-motion-med) ease}\n.cat-input>.el::placeholder{color:var(--cat-color-ink-low)}\n.cat-input:focus-within>.el{background:linear-gradient(180deg,#fff,rgba(248,250,255,.92));border-color:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));box-shadow:0 0 0 var(--cat-size-border-focus-ring) var(--cat-semantic-accent-ring)}\n.cat-input.has-icon>.el{padding-left:32px}\n.cat-input>.cat-icon{position:absolute;left:10px;display:grid;place-items:center;color:var(--cat-color-ink-low);pointer-events:none}\n.cat-input>.el:disabled{opacity:.5;cursor:not-allowed}\n.cat-field.is-error>.cat-input>.el{border-color:var(--cat-color-danger-base)}\n.field-msg{font-size:var(--cat-font-size-xs);color:var(--cat-color-danger-base)}",
+    "\ntextarea.cat-el{min-height:84px;padding:9px 12px;height:auto;resize:vertical;line-height:1.45}\nselect.cat-el{-webkit-appearance:none;appearance:none;padding-right:30px;background-image:url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"10\" height=\"10\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"%2359627a\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 9l6 6 6-6\"/></svg>');background-repeat:no-repeat;background-position:right 10px center;cursor:pointer}",
+    ".cat-field{width:100%;max-width:320px}"
+   ]
+  },
+  "qt": {
+   "widget": "QLineEdit",
+   "qss": [
+    "QLineEdit{background:rgba(255,255,255,140);border:1px solid {$color.stroke.input$};border-radius:10px;padding:5px 12px;color:{$color.ink.hi$};selection-background-color:{$color.accent.base$}}",
+    "QLineEdit:focus{border-color:{$color.accent.base$}}",
+    "QLineEdit:disabled{opacity:0.5}",
+    "QTextEdit{background:rgba(255,255,255,150);border:1px solid {$color.stroke.input$};border-radius:10px;color:{$color.ink.hi$}}",
+    "QComboBox{background:rgba(255,255,255,160);border:1px solid {$color.stroke.input$};border-radius:10px;padding:5px 26px 5px 12px;color:{$color.ink.hi$}}",
+    "QComboBox::drop-down{border:none;width:24px}",
+    "QComboBox QAbstractItemView{background:{$color.surface.menu$};border:1px solid {$color.stroke.menu$};border-radius:{$size.radius.md$};selection-background-color:{$color.accent.base$};selection-color:white}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<div class=\"cat-field\"><label class=\"cat-label\">Nombre</label><div class=\"cat-input has-icon\"><span class=\"cat-icon\"><svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"M20 20l-3.5-3.5\"/></svg></span><input class=\"el\" placeholder=\"Buscar…\"></div></div>",
+   "<div class=\"cat-field is-error\"><label class=\"cat-label\">Email</label><div class=\"cat-input\"><input class=\"el\" value=\"no-es-un-email\"></div><span class=\"field-msg\">Formato inválido</span></div>",
+   "<div class=\"cat-field\"><label class=\"cat-label\">Select</label><div class=\"cat-input\"><select class=\"el\"><option>Opción A</option><option>Opción B</option></select></div></div>",
+   "<div class=\"cat-field\"><label class=\"cat-label\">Mensaje</label><div class=\"cat-input\"><textarea class=\"el\"></textarea></div></div>"
+  ]
+ },
+ "guidance": {
+  "use": [
+   "Datos cortos con formato predecible (email, busqueda, nombre)."
+  ],
+  "avoid": [
+   "Placeholders como unica etiqueta: desaparecen al escribir."
+  ],
+  "rules": [
+   "Errores inline bajo el campo, nunca dialogs.",
+   "Icono lider solo cuando ayuda al scanning (busqueda)."
+  ]
+ }
+}

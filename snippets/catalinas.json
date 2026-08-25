@@ -1,0 +1,1018 @@
+{
+ "cat-accordion": {
+  "prefix": [
+   "cat-accordion"
+  ],
+  "description": "Catalinas: Colapsable nativo <details>, sin JS.",
+  "body": [
+   "<details class=\"cat-accordion\">",
+   "<summary>Titulo",
+   "<svg class=\"chev\" width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\">",
+   "<path d=\"M6 9l6 6 6-6\"/>",
+   "</svg>",
+   "</summary>",
+   "<div class=\"body\">Contenido",
+   "</div>",
+   "</details>"
+  ]
+ },
+ "cat-alert-banner": {
+  "prefix": [
+   "cat-alert-banner"
+  ],
+  "description": "Catalinas: Banner de estado con icono lider y tinte de fondo por severidad. Sin franjas laterales ni bordes semanticos.",
+  "body": [
+   "<div class=\"cat-alert\">",
+   "<span class=\"a-icon\">",
+   "<svg width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\">",
+   "<circle cx=\"12\" cy=\"12\" r=\"9\"/>",
+   "<path d=\"M12 8h.01M12 11v5\"/>",
+   "</svg>",
+   "</span>",
+   "<div class=\"a-body\">",
+   "<b>Title",
+   "</b>",
+   "<span>Message",
+   "</span>",
+   "</div>",
+   "<button class=\"t-close\" data-cat-dismiss=\".cat-alert\">x",
+   "</button>",
+   "</div>"
+  ]
+ },
+ "cat-app-header": {
+  "prefix": [
+   "cat-app-header"
+  ],
+  "description": "Catalinas: Barra superior de aplicacion: marca, navegacion y acciones.",
+  "body": [
+   "<header class=\"cat-appheader\">",
+   "<span class=\"brand\">App",
+   "</span>",
+   "<nav>",
+   "<a class=\"is-active\">Inicio",
+   "</a>",
+   "<a>Datos",
+   "</a>",
+   "<a>Ajustes",
+   "</a>",
+   "</nav>",
+   "<span class=\"spacer\">",
+   "</span>",
+   "<button class=\"cat-btn primary sm\">Nuevo",
+   "</button>",
+   "</header>"
+  ]
+ },
+ "cat-app-shell": {
+  "prefix": [
+   "cat-app-shell"
+  ],
+  "description": "Catalinas: Layout de aplicacion completa: chrome + toolbar + sidebar + contenido + statusbar. Grid unico.",
+  "body": [
+   "<div class=\"cat-appshell\">",
+   "<header class=\"cat-shell-chrome\">",
+   "</header>",
+   "<div class=\"cat-shell-toolbar\">",
+   "</div>",
+   "<div class=\"cat-shell-body\">",
+   "<aside class=\"cat-sidebar\">",
+   "</aside>",
+   "<main class=\"cat-shell-main\">",
+   "</main>",
+   "</div>",
+   "<footer class=\"cat-statusbar\">",
+   "</footer>",
+   "</div>"
+  ]
+ },
+ "cat-avatar-group": {
+  "prefix": [
+   "cat-avatar-group"
+  ],
+  "description": "Catalinas: Stack de avatares con overlap y contador restante.",
+  "body": [
+   "<div class=\"cat-avgroup\">",
+   "<span class=\"cat-avatar\">LU",
+   "</span>",
+   "<span class=\"cat-avatar\">MI",
+   "</span>",
+   "<span class=\"cat-avatar\">CO",
+   "</span>",
+   "<span class=\"cat-avatar more\">+5",
+   "</span>",
+   "</div>"
+  ]
+ },
+ "cat-badge-tooltip-kbd-avatar": {
+  "prefix": [
+   "cat-badge-tooltip-kbd-avatar"
+  ],
+  "description": "Catalinas: Micro-componentes: badge, tooltip CSS-only, tecla, divisor y avatar.",
+  "body": [
+   "<span class=\"cat-badge accent\">New",
+   "</span>"
+  ]
+ },
+ "cat-breadcrumb-toolbar": {
+  "prefix": [
+   "cat-breadcrumb-toolbar"
+  ],
+  "description": "Catalinas: Ruta jerárquica + banda de acciones con gradiente de identidad.",
+  "body": [
+   "<nav class=\"cat-breadcrumb\">",
+   "<span class=\"crumb\">This PC",
+   "</span>",
+   "<span class=\"sep\">›",
+   "</span>",
+   "<span class=\"crumb current\">Documents",
+   "</span>",
+   "</nav>"
+  ]
+ },
+ "cat-button": {
+  "prefix": [
+   "cat-button"
+  ],
+  "description": "Catalinas: Acción primaria, secundaria, fantasma, peligrosa o enlace.",
+  "body": [
+   "<button class=\"cat-btn primary\">Primary",
+   "</button>"
+  ]
+ },
+ "cat-card-toast": {
+  "prefix": [
+   "cat-card-toast"
+  ],
+  "description": "Catalinas: Superficies por nivel de profundidad + notificaciones descartables.",
+  "body": [
+   "<div class=\"cat-card\">Card L2 (contenido)",
+   "</div>"
+  ]
+ },
+ "cat-carousel": {
+  "prefix": [
+   "cat-carousel"
+  ],
+  "description": "Catalinas: Carrusel horizontal con scroll-snap y flechas prev/next.",
+  "body": [
+   "<div class=\"car-wrap\">",
+   "<div class=\"car-head\">",
+   "<b>Galeria",
+   "</b>",
+   "<span class=\"car-nav\">",
+   "<button data-cat-car-prev aria-label=\"Anterior\">&#8249;",
+   "</button>",
+   "<button data-cat-car-next aria-label=\"Siguiente\">&#8250;",
+   "</button>",
+   "</span>",
+   "</div>",
+   "<div class=\"cat-carousel\">",
+   "<div class=\"slide\">",
+   "<b>Favoritos",
+   "</b>",
+   "<span>12 items",
+   "</span>",
+   "</div>",
+   "<div class=\"slide\">",
+   "<b>Recientes",
+   "</b>",
+   "<span>67 items",
+   "</span>",
+   "</div>",
+   "<div class=\"slide\">",
+   "<b>Compartidos",
+   "</b>",
+   "<span>8 items",
+   "</span>",
+   "</div>",
+   "<div class=\"slide\">",
+   "<b>Papelera",
+   "</b>",
+   "<span>3 items",
+   "</span>",
+   "</div>",
+   "<div class=\"slide\">",
+   "<b>Descargas",
+   "</b>",
+   "<span>21 items",
+   "</span>",
+   "</div>",
+   "</div>",
+   "</div>"
+  ]
+ },
+ "cat-checkbox-radio": {
+  "prefix": [
+   "cat-checkbox-radio"
+  ],
+  "description": "Catalinas: Selección múltiple y exclusiva.",
+  "body": [
+   "<label class=\"cat-check\">",
+   "<input type=\"checkbox\" checked>",
+   "<span class=\"box\">",
+   "</span>Checkbox",
+   "</label>"
+  ]
+ },
+ "cat-color-picker": {
+  "prefix": [
+   "cat-color-picker"
+  ],
+  "description": "Catalinas: Seleccion de accent para todo el sistema: swatches + auto (derivado del wallpaper).",
+  "body": [
+   "<div class=\"cat-colors\" data-cat-colors>",
+   "<button class=\"cat-swatch auto active\" data-auto aria-label=\"Auto\">",
+   "</button>",
+   "<button class=\"cat-swatch\" style=\"background:#5e9eff\" data-color=\"#5e9eff\" aria-label=\"Azul\">",
+   "</button>",
+   "<button class=\"cat-swatch\" style=\"background:#a78bfa\" data-color=\"#a78bfa\" aria-label=\"Violeta\">",
+   "</button>",
+   "<button class=\"cat-swatch\" style=\"background:#f2a2c6\" data-color=\"#f2a2c6\" aria-label=\"Rosa\">",
+   "</button>",
+   "<button class=\"cat-swatch\" style=\"background:#ef5a76\" data-color=\"#ef5a76\" aria-label=\"Rojo\">",
+   "</button>",
+   "<button class=\"cat-swatch\" style=\"background:#34c759\" data-color=\"#34c759\" aria-label=\"Verde\">",
+   "</button>",
+   "<span class=\"cat-label-side\">cambia todo el UI",
+   "</span>",
+   "</div>"
+  ]
+ },
+ "cat-command-palette": {
+  "prefix": [
+   "cat-command-palette"
+  ],
+  "description": "Catalinas: Palette de comandos global (Ctrl+K / Cmd+K). Busca, navega con flechas, ejecuta con Enter.",
+  "body": [
+   "<div class=\"cat-cmdk-overlay open\">",
+   "<div class=\"cat-cmdk\" role=\"dialog\" aria-modal=\"true\">",
+   "<input class=\"cmdk-input\" placeholder=\"Escribe un comando...\">",
+   "<div class=\"cmdk-list\">",
+   "<button class=\"cat-menu-item cmdk-item is-active\" role=\"option\">Nuevo archivo",
+   "<span class=\"menu-kbd\">N",
+   "</span>",
+   "</button>",
+   "<button class=\"cat-menu-item cmdk-item\" role=\"option\">Abrir reciente",
+   "<span class=\"menu-kbd\">Ctrl+O",
+   "</span>",
+   "</button>",
+   "</div>",
+   "<div class=\"cmdk-foot\">",
+   "<span class=\"menu-kbd\">ESC cerrar",
+   "</span>",
+   "</div>",
+   "</div>",
+   "</div>"
+  ]
+ },
+ "cat-dialog": {
+  "prefix": [
+   "cat-dialog"
+  ],
+  "description": "Catalinas: Modal nativo <dialog> con backdrop blur. Foco y ESC gratis.",
+  "body": [
+   "<dialog class=\"cat-dialog\">",
+   "<h3>Titulo",
+   "</h3>",
+   "<p>Contenido",
+   "</p>",
+   "<form method=\"dialog\">",
+   "<button class=\"cat-btn primary\">OK",
+   "</button>",
+   "</form>",
+   "</dialog>"
+  ]
+ },
+ "cat-dropzone": {
+  "prefix": [
+   "cat-dropzone"
+  ],
+  "description": "Catalinas: Zona de carga drag and drop. Visual puro; estado :drag-over via clase .over (JS del host).",
+  "body": [
+   "<label class=\"cat-dropzone\">",
+   "<input type=\"file\" multiple hidden>",
+   "<b>Solta archivos aca",
+   "</b>",
+   "<span>o hace clic para elegir",
+   "</span>",
+   "</label>"
+  ]
+ },
+ "cat-empty-state": {
+  "prefix": [
+   "cat-empty-state"
+  ],
+  "description": "Catalinas: Estado vacio: orbe con icono, titulo, descripcion y accion primaria.",
+  "body": [
+   "<div class=\"cat-empty\">",
+   "<div class=\"cat-empty-orb\">",
+   "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">",
+   "<path d=\"M13 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9z\"/>",
+   "<path d=\"M13 3v6h6\"/>",
+   "<path d=\"M12 12v6m-3-3h6\"/>",
+   "</svg>",
+   "</div>",
+   "<h4 class=\"cat-empty-title\">Sin resultados",
+   "</h4>",
+   "<p class=\"cat-empty-msg\">Proba con otros terminos o crea algo nuevo.",
+   "</p>",
+   "<button class=\"cat-btn primary sm\">Crear",
+   "</button>",
+   "</div>"
+  ]
+ },
+ "cat-file-chip": {
+  "prefix": [
+   "cat-file-chip"
+  ],
+  "description": "Catalinas: Chip de archivo adjunto/subido: icono, nombre, peso, remover.",
+  "body": [
+   "<span class=\"cat-filechip\">",
+   "<svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#5f8af5\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">",
+   "<path d=\"M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z\"/>",
+   "<path d=\"M14 3v5h5\"/>",
+   "</svg>",
+   "<span class=\"fc-name\">informe.pdf",
+   "</span>",
+   "<span class=\"fc-size\">2.4 MB",
+   "</span>",
+   "<button class=\"fc-x\" aria-label=\"Quitar\">x",
+   "</button>",
+   "</span>"
+  ]
+ },
+ "cat-filter-chips": {
+  "prefix": [
+   "cat-filter-chips"
+  ],
+  "description": "Catalinas: Chips de filtro multi-seleccion con estado activo accent.",
+  "body": [
+   "<div class=\"cat-chips\">",
+   "<label class=\"chip active\">Documentos",
+   "<input type=\"checkbox\" checked hidden>",
+   "</label>",
+   "<label class=\"chip\">Presentaciones",
+   "<input type=\"checkbox\" hidden>",
+   "</label>",
+   "<label class=\"chip\">Carpetas",
+   "<input type=\"checkbox\" hidden>",
+   "</label>",
+   "</div>"
+  ]
+ },
+ "cat-form-validation": {
+  "prefix": [
+   "cat-form-validation"
+  ],
+  "description": "Catalinas: Validacion declarativa: required/email/minLength via atributos. Errores inline y evento cat:valid.",
+  "body": [
+   "<form class=\"cat-form\" data-cat-validate novalidate>",
+   "<div class=\"cat-field\">",
+   "<label class=\"cat-label\">Email *",
+   "</label>",
+   "<div class=\"cat-input has-icon\">",
+   "<input class=\"el\" required data-cat-type=\"email\" placeholder=\"tu@email.com\">",
+   "</div>",
+   "</div>",
+   "</form>"
+  ]
+ },
+ "cat-icons": {
+  "prefix": [
+   "cat-icons"
+  ],
+  "description": "Catalinas: Iconos themable con runtime CatalinasIcons. Default: Lucide (SVG). Alternativas por CDN webfont.",
+  "body": [
+   "<span data-cat-icon=\"folder\">",
+   "</span>"
+  ]
+ },
+ "cat-input": {
+  "prefix": [
+   "cat-input"
+  ],
+  "description": "Catalinas: Campo de texto, con icono opcional y estado de error.",
+  "body": [
+   "<div class=\"cat-field\">",
+   "<label class=\"cat-label\">Name",
+   "</label>",
+   "<div class=\"cat-input\">",
+   "<input class=\"el\" placeholder=\"Placeholder\">",
+   "</div>",
+   "</div>"
+  ]
+ },
+ "cat-key-value-list": {
+  "prefix": [
+   "cat-key-value-list"
+  ],
+  "description": "Catalinas: Lista definicion clave/valor para metadata y propiedades.",
+  "body": [
+   "<dl class=\"cat-kv\">",
+   "<div>",
+   "<dt>Size",
+   "</dt>",
+   "<dd>4.33 GB",
+   "</dd>",
+   "</div>",
+   "<div>",
+   "<dt>Items",
+   "</dt>",
+   "<dd>67",
+   "</dd>",
+   "</div>",
+   "<div>",
+   "<dt>Modified",
+   "</dt>",
+   "<dd>Aug 25, 2026",
+   "</dd>",
+   "</div>",
+   "</dl>"
+  ]
+ },
+ "cat-list-statusbar": {
+  "prefix": [
+   "cat-list-statusbar"
+  ],
+  "description": "Catalinas: Lista agrupada editorial (headers + filas) y barra de estado contextual.",
+  "body": [
+   "<div class=\"cat-list\">",
+   "<div class=\"cat-list-header\">",
+   "<span>Name",
+   "</span>",
+   "<span>Type",
+   "</span>",
+   "<span>Date",
+   "</span>",
+   "</div>",
+   "<div class=\"cat-group-head\">File Folders",
+   "</div>",
+   "<div class=\"cat-row selected\">",
+   "<span class=\"cell-name\">Design",
+   "</span>",
+   "<span class=\"cell-type\">Folder",
+   "</span>",
+   "<span class=\"cell-date\">Aug 22",
+   "</span>",
+   "</div>",
+   "<div class=\"cat-row\">",
+   "<span class=\"cell-name\">Fonts",
+   "</span>",
+   "<span class=\"cell-type\">Folder",
+   "</span>",
+   "<span class=\"cell-date\">Aug 19",
+   "</span>",
+   "</div>",
+   "</div>"
+  ]
+ },
+ "cat-menu": {
+  "prefix": [
+   "cat-menu"
+  ],
+  "description": "Catalinas: Dropdown flotante nivel depth.dropdown. Trigger por data-attr.",
+  "body": [
+   "<div data-cat-menu>",
+   "<button class=\"cat-btn secondary\" data-cat-menu-trigger aria-expanded=\"false\">Options ▾",
+   "</button>",
+   "<div class=\"cat-menu\" role=\"menu\">",
+   "<button class=\"cat-menu-item checked\" role=\"menuitem\">Details",
+   "<span class=\"mi-check\">",
+   "<svg width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\">",
+   "<path d=\"M5 13l4 4 10-10\"/>",
+   "</svg>",
+   "</span>",
+   "</button>",
+   "<div class=\"cat-menu-sep\">",
+   "</div>",
+   "<button class=\"cat-menu-item\" role=\"menuitem\">Rename",
+   "<span class=\"menu-kbd\">F2",
+   "</span>",
+   "</button>",
+   "</div>",
+   "</div>"
+  ]
+ },
+ "cat-meter": {
+  "prefix": [
+   "cat-meter"
+  ],
+  "description": "Catalinas: Medidor semantico (disco, RAM): verde/amarillo/rojo segun umbral.",
+  "body": [
+   "<div class=\"cat-meter warn\" data-value=\"78%\">",
+   "<div class=\"fill\" style=\"width:78%\">",
+   "</div>",
+   "</div>"
+  ]
+ },
+ "cat-mobile-tabbar": {
+  "prefix": [
+   "cat-mobile-tabbar"
+  ],
+  "description": "Catalinas: Barra de navegacion inferior para movil: glass con blur, item activo accent.",
+  "body": [
+   "<nav class=\"cat-tabbar\" data-cat-tabs role=\"tablist\">",
+   "<button type=\"button\" class=\"tb-item is-active\" data-cat-tab role=\"tab\" aria-selected=\"true\">",
+   "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">",
+   "<path d=\"M3 11l9-8 9 8\"/>",
+   "<path d=\"M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10\"/>",
+   "</svg>",
+   "<span>Inicio",
+   "</span>",
+   "</button>",
+   "<button type=\"button\" class=\"tb-item\" data-cat-tab role=\"tab\" aria-selected=\"false\">",
+   "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">",
+   "<circle cx=\"11\" cy=\"11\" r=\"7\"/>",
+   "<path d=\"M20 20l-3.5-3.5\"/>",
+   "</svg>",
+   "<span>Buscar",
+   "</span>",
+   "</button>",
+   "<button type=\"button\" class=\"tb-item\" data-cat-tab role=\"tab\" aria-selected=\"false\">",
+   "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">",
+   "<path d=\"M12 5v14M5 12h14\"/>",
+   "</svg>",
+   "<span>Crear",
+   "</span>",
+   "</button>",
+   "<button type=\"button\" class=\"tb-item\" data-cat-tab role=\"tab\" aria-selected=\"false\">",
+   "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">",
+   "<path d=\"M12 21C7 16.5 3 13.2 3 9.5A4.5 4.5 0 0 1 12 6a4.5 4.5 0 0 1 9 3.5c0 3.7-4 7-9 11.5z\"/>",
+   "</svg>",
+   "<span>Favs",
+   "</span>",
+   "</button>",
+   "<button type=\"button\" class=\"tb-item\" data-cat-tab role=\"tab\" aria-selected=\"false\">",
+   "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">",
+   "<circle cx=\"12\" cy=\"8\" r=\"4\"/>",
+   "<path d=\"M4 21c1.5-4 5-6 8-6s6.5 2 8 6\"/>",
+   "</svg>",
+   "<span>Perfil",
+   "</span>",
+   "</button>",
+   "</nav>"
+  ]
+ },
+ "cat-pagination": {
+  "prefix": [
+   "cat-pagination"
+  ],
+  "description": "Catalinas: Paginador compacto con estados activo/disabled.",
+  "body": [
+   "<nav class=\"cat-pagination\">",
+   "<button class=\"page prev\" disabled>&lt;",
+   "</button>",
+   "<button class=\"page is-active\">1",
+   "</button>",
+   "<button class=\"page\">2",
+   "</button>",
+   "<button class=\"page\">3",
+   "</button>",
+   "<span class=\"ellip\">&hellip;",
+   "</span>",
+   "<button class=\"page\">12",
+   "</button>",
+   "<button class=\"page next\">&gt;",
+   "</button>",
+   "</nav>"
+  ]
+ },
+ "cat-progress-spinner-skeleton": {
+  "prefix": [
+   "cat-progress-spinner-skeleton"
+  ],
+  "description": "Catalinas: Indicadores de progreso determinado, indeterminado y carga.",
+  "body": [
+   "<div class=\"cat-progress\">",
+   "<div class=\"fill\" style=\"width:64%\">",
+   "</div>",
+   "</div>"
+  ]
+ },
+ "cat-radius-scale": {
+  "prefix": [
+   "cat-radius-scale"
+  ],
+  "description": "Catalinas: Escala de radios sobre gris neutro, para elegir el correcto por superficie.",
+  "body": [
+   "<div class=\"cat-radii\">",
+   "<div class=\"rr\">",
+   "<i style=\"border-radius:4px;\">",
+   "</i>4px",
+   "</div>",
+   "<div class=\"rr\">",
+   "<i style=\"border-radius:6px;\">",
+   "</i>6px",
+   "</div>",
+   "<div class=\"rr\">",
+   "<i style=\"border-radius:8px;\">",
+   "</i>8px",
+   "</div>",
+   "<div class=\"rr\">",
+   "<i style=\"border-radius:12px;\">",
+   "</i>12px",
+   "</div>",
+   "<div class=\"rr\">",
+   "<i style=\"border-radius:16px;\">",
+   "</i>16px",
+   "</div>",
+   "<div class=\"rr\">",
+   "<i style=\"border-radius:999px;width:64px;height:36px\">",
+   "</i>pill",
+   "</div>",
+   "</div>"
+  ]
+ },
+ "cat-rating": {
+  "prefix": [
+   "cat-rating"
+  ],
+  "description": "Catalinas: Estrellas interactivas CSS-only via radios.",
+  "body": [
+   "<div class=\"cat-rating\" data-cat-rating data-value=\"3\" role=\"radiogroup\" aria-label=\"Puntaje\">",
+   "<button type=\"button\" class=\"star\" aria-label=\"1 estrellas\">",
+   "<svg viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\">",
+   "<path d=\"M12 2.6l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3L12 17l-5.7 3 1.2-6.3L2.8 9.3l6.4-.8z\"/>",
+   "</svg>",
+   "</button>",
+   "<button type=\"button\" class=\"star\" aria-label=\"2 estrellas\">",
+   "<svg viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\">",
+   "<path d=\"M12 2.6l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3L12 17l-5.7 3 1.2-6.3L2.8 9.3l6.4-.8z\"/>",
+   "</svg>",
+   "</button>",
+   "<button type=\"button\" class=\"star\" aria-label=\"3 estrellas\">",
+   "<svg viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\">",
+   "<path d=\"M12 2.6l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3L12 17l-5.7 3 1.2-6.3L2.8 9.3l6.4-.8z\"/>",
+   "</svg>",
+   "</button>",
+   "<button type=\"button\" class=\"star\" aria-label=\"4 estrellas\">",
+   "<svg viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\">",
+   "<path d=\"M12 2.6l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3L12 17l-5.7 3 1.2-6.3L2.8 9.3l6.4-.8z\"/>",
+   "</svg>",
+   "</button>",
+   "<button type=\"button\" class=\"star\" aria-label=\"5 estrellas\">",
+   "<svg viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\">",
+   "<path d=\"M12 2.6l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3L12 17l-5.7 3 1.2-6.3L2.8 9.3l6.4-.8z\"/>",
+   "</svg>",
+   "</button>",
+   "</div>"
+  ]
+ },
+ "cat-segmented": {
+  "prefix": [
+   "cat-segmented"
+  ],
+  "description": "Catalinas: Control segmentado estilo macOS. CSS-only via radios (accesible).",
+  "body": [
+   "<div class=\"cat-segmented\" data-cat-segmented role=\"radiogroup\" aria-label=\"Vista\">",
+   "<button type=\"button\" class=\"seg-btn is-active\" aria-pressed=\"true\">Icons",
+   "</button>",
+   "<button type=\"button\" class=\"seg-btn\" aria-pressed=\"false\">List",
+   "</button>",
+   "<button type=\"button\" class=\"seg-btn\" aria-pressed=\"false\">Gallery",
+   "</button>",
+   "</div>"
+  ]
+ },
+ "cat-sidebar-nav": {
+  "prefix": [
+   "cat-sidebar-nav"
+  ],
+  "description": "Catalinas: Navegación lateral con item activo lleno (Finder-style) y árbol expandible.",
+  "body": [
+   "<aside class=\"cat-sidebar\">",
+   "<div class=\"cat-nav-item active\">",
+   "<span class=\"ni-icon\">*",
+   "</span>Documents",
+   "</div>",
+   "<div class=\"cat-section\">Locations",
+   "</div>",
+   "<div class=\"cat-nav-item\">",
+   "<span class=\"ni-icon\">o",
+   "</span>Network",
+   "</div>",
+   "</aside>"
+  ]
+ },
+ "cat-slider": {
+  "prefix": [
+   "cat-slider"
+  ],
+  "description": "Catalinas: Range nativo con thumb grande (zona táctil > visual, spec §40).",
+  "body": [
+   "<input class=\"cat-slider\" type=\"range\" min=\"0\" max=\"100\" value=\"40\">"
+  ]
+ },
+ "cat-sparkline": {
+  "prefix": [
+   "cat-sparkline"
+  ],
+  "description": "Catalinas: Grafico SVG minimo: linea o barras desde data-values. Cero dependencias.",
+  "body": [
+   "<span class=\"cat-sparkline\" data-cat-spark=\"4,9,6,12,8,14\" data-spark-type=\"line\">",
+   "</span>"
+  ]
+ },
+ "cat-stat-card": {
+  "prefix": [
+   "cat-stat-card"
+  ],
+  "description": "Catalinas: KPI card: label, valor grande, delta con direccion.",
+  "body": [
+   "<div class=\"cat-stat\">",
+   "<span class=\"label\">Ingresos",
+   "</span>",
+   "<span class=\"value\">$12.4K",
+   "</span>",
+   "<span class=\"delta up\">+8.2%",
+   "</span>",
+   "</div>"
+  ]
+ },
+ "cat-stepper": {
+  "prefix": [
+   "cat-stepper"
+  ],
+  "description": "Catalinas: Pasos numerados conectados: done / active / pendiente.",
+  "body": [
+   "<ol class=\"cat-stepper\">",
+   "<li class=\"done\">",
+   "<span>1",
+   "</span>Cuenta",
+   "</li>",
+   "<li class=\"active\">",
+   "<span>2",
+   "</span>Datos",
+   "</li>",
+   "<li>",
+   "<span>3",
+   "</span>Confirmar",
+   "</li>",
+   "</ol>"
+  ]
+ },
+ "cat-switch": {
+  "prefix": [
+   "cat-switch"
+  ],
+  "description": "Catalinas: Toggle binario estilo macOS. CSS puro sobre checkbox nativo (accesible).",
+  "body": [
+   "<label class=\"cat-switch\">",
+   "<input type=\"checkbox\" checked>",
+   "<span class=\"track\">",
+   "</span>",
+   "</label>"
+  ]
+ },
+ "cat-table": {
+  "prefix": [
+   "cat-table"
+  ],
+  "description": "Catalinas: Tabla de datos: header secundario uppercase, hover suave, fila seleccionada en accent.",
+  "body": [
+   "<table class=\"cat-table\">",
+   "<thead>",
+   "<tr>",
+   "<th>Nombre",
+   "</th>",
+   "<th>Estado",
+   "</th>",
+   "<th>Peso",
+   "</th>",
+   "</tr>",
+   "</thead>",
+   "<tbody>",
+   "<tr class=\"is-selected\">",
+   "<td>backup.zip",
+   "</td>",
+   "<td>Listo",
+   "</td>",
+   "<td>1.2 GB",
+   "</td>",
+   "</tr>",
+   "<tr>",
+   "<td>fotos.tar",
+   "</td>",
+   "<td>En curso",
+   "</td>",
+   "<td>860 MB",
+   "</td>",
+   "</tr>",
+   "</tbody>",
+   "</table>"
+  ]
+ },
+ "cat-tabs": {
+  "prefix": [
+   "cat-tabs"
+  ],
+  "description": "Catalinas: Pestañas chip aqua + paneles sincronizados por data-attrs.",
+  "body": [
+   "<div class=\"cat-tabs\" data-cat-tabs=\"demo\">",
+   "<button class=\"cat-tab is-active\" data-cat-tab=\"a\">One",
+   "</button>",
+   "<button class=\"cat-tab\" data-cat-tab=\"b\">Two",
+   "</button>",
+   "</div>"
+  ]
+ },
+ "cat-timeline": {
+  "prefix": [
+   "cat-timeline"
+  ],
+  "description": "Catalinas: Feed de actividad vertical con puntos y linea conectora.",
+  "body": [
+   "<ul class=\"cat-timeline\">",
+   "<li>",
+   "<span class=\"dot\">",
+   "</span>",
+   "<div>",
+   "<b>Sincronizacion",
+   "</b> iniciada",
+   "<span class=\"t\">hace 2 min",
+   "</span>",
+   "</div>",
+   "</li>",
+   "<li>",
+   "<span class=\"dot done\">",
+   "</span>",
+   "<div>",
+   "<b>Backup",
+   "</b> completado",
+   "<span class=\"t\">hace 1 h",
+   "</span>",
+   "</div>",
+   "</li>",
+   "</ul>"
+  ]
+ },
+ "cat-toast-queue": {
+  "prefix": [
+   "cat-toast-queue"
+  ],
+  "description": "Catalinas: API JS para cola de notificaciones: Catalinas.toast({tone,title,message,timeout}).",
+  "body": [
+   "<button class=\"cat-btn secondary sm\" data-cat-toast-demo=\"info\">Toast demo",
+   "</button>"
+  ]
+ },
+ "cat-tree-view": {
+  "prefix": [
+   "cat-tree-view"
+  ],
+  "description": "Catalinas: Arbol jerarquico en contenido (no sidebar). Expand/collapse nativo via details-like con JS minimo opcional.",
+  "body": [
+   "<ul class=\"cat-tree\">",
+   "<li class=\"branch open\">",
+   "<div class=\"t-row\">",
+   "<span class=\"tw\">-",
+   "</span> Projects",
+   "</div>",
+   "<ul>",
+   "<li>",
+   "<div class=\"t-row leaf\">catalinas",
+   "</div>",
+   "</li>",
+   "<li>",
+   "<div class=\"t-row leaf\">kittydrive",
+   "</div>",
+   "</li>",
+   "</ul>",
+   "</li>",
+   "</ul>"
+  ]
+ },
+ "cat-typography": {
+  "prefix": [
+   "cat-typography"
+  ],
+  "description": "Catalinas: Escala textual, estados y resaltado tipo seleccion (.cat-mark).",
+  "body": [
+   "<div class=\"cat-typography-list\">",
+   "<div class=\"trow\">",
+   "<span class=\"tag\">H1",
+   "</span>",
+   "<h1 class=\"cat-h1\">Titulo de vista",
+   "</h1>",
+   "</div>",
+   "<div class=\"trow\">",
+   "<span class=\"tag\">H2",
+   "</span>",
+   "<h2 class=\"cat-h2\">Seccion destacada",
+   "</h2>",
+   "</div>",
+   "<div class=\"trow\">",
+   "<span class=\"tag\">Body",
+   "</span>",
+   "<p class=\"cat-body\">Texto con ",
+   "<span class=\"cat-mark\">resaltado accent",
+   "</span> dentro.",
+   "</p>",
+   "</div>",
+   "<div class=\"trow\">",
+   "<span class=\"tag\">Mark",
+   "</span>",
+   "<p class=\"cat-body\">Variantes: ",
+   "<span class=\"cat-mark success\">ok",
+   "</span> ",
+   "<span class=\"cat-mark danger\">error",
+   "</span> ",
+   "<code class=\"cat-code\">codigo",
+   "</code>",
+   "</p>",
+   "</div>",
+   "<div class=\"trow\">",
+   "<span class=\"tag\">Estados",
+   "</span>",
+   "<p class=\"cat-body\">muted ",
+   "<span class=\"cat-text-muted\">medio",
+   "</span>, ",
+   "<span class=\"cat-text-low\">bajo",
+   "</span>, ",
+   "<span class=\"cat-text-accent\">accent",
+   "</span>, ",
+   "<span class=\"cat-text-success\">exito",
+   "</span>, ",
+   "<span class=\"cat-text-danger\">error",
+   "</span>",
+   "</p>",
+   "</div>",
+   "<div class=\"trow\">",
+   "<span class=\"tag\">Caption",
+   "</span>",
+   "<span class=\"caption\">Metadata secundaria - Aug 25, 2026",
+   "</span>",
+   "</div>",
+   "</div>"
+  ]
+ },
+ "cat-window-chrome": {
+  "prefix": [
+   "cat-window-chrome"
+  ],
+  "description": "Catalinas: Ventana acrilica: tabs integrados + controles minimizar, maximizar y cerrar con hover rojo.",
+  "body": [
+   "<div class=\"cat-window-demo\">",
+   "<div class=\"cat-win-tabs\">",
+   "<button class=\"cat-wtab is-active\">Documents",
+   "</button>",
+   "<button class=\"cat-wtab\">Music",
+   "</button>",
+   "<button class=\"cat-wtab add\">+",
+   "</button>",
+   "</div>",
+   "<div class=\"cat-win-controls\">",
+   "<button class=\"cat-win-btn\" aria-label=\"Minimize\">",
+   "<svg width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\">",
+   "<path d=\"M5 12h14\"/>",
+   "</svg>",
+   "</button>",
+   "<button class=\"cat-win-btn\" aria-label=\"Maximize\">",
+   "<svg width=\"9\" height=\"9\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\">",
+   "<rect x=\"5\" y=\"5\" width=\"14\" height=\"14\" rx=\"1.5\"/>",
+   "</svg>",
+   "</button>",
+   "<button class=\"cat-win-btn close\" aria-label=\"Close\">",
+   "<svg width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\">",
+   "<path d=\"M6 6l12 12M18 6L6 18\"/>",
+   "</svg>",
+   "</button>",
+   "</div>",
+   "</div>"
+  ]
+ },
+ "cat-windows": {
+  "prefix": [
+   "cat-windows"
+  ],
+  "description": "Catalinas: Ventanas de nivel app en dos materiales: Desktop (vidrio acrilico) y Normal (solida). Ambas con barra de control.",
+  "body": [
+   "<section class=\"cat-window glass\" style=\"width:320px\">",
+   "<header class=\"w-bar\">",
+   "<b>Desktop",
+   "</b>",
+   "<div class=\"w-ctl\">",
+   "<button class=\"w-btn\" aria-label=\"Minimize\">",
+   "<svg width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\">",
+   "<path d=\"M5 12h14\"/>",
+   "</svg>",
+   "</button>",
+   "<button class=\"w-btn\" aria-label=\"Maximize\">",
+   "<svg width=\"9\" height=\"9\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\">",
+   "<rect x=\"5\" y=\"5\" width=\"14\" height=\"14\" rx=\"1.5\"/>",
+   "</svg>",
+   "</button>",
+   "<button class=\"w-btn close\" aria-label=\"Close\">",
+   "<svg width=\"10\" height=\"10\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\">",
+   "<path d=\"M6 6l12 12M18 6L6 18\"/>",
+   "</svg>",
+   "</button>",
+   "</div>",
+   "</header>",
+   "<div class=\"w-body\">Contenido sobre vidrio acrilico.",
+   "</div>",
+   "</section>"
+  ]
+ }
+}

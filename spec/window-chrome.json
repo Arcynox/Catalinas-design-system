@@ -1,0 +1,35 @@
+{
+ "name": "window-chrome",
+ "description": "Ventana acrilica: tabs integrados + controles minimizar, maximizar y cerrar con hover rojo.",
+ "targets": {
+  "web": {
+   "markup": "<div class=\"cat-window-demo\"><div class=\"cat-win-tabs\"><button class=\"cat-wtab is-active\">Documents</button><button class=\"cat-wtab\">Music</button><button class=\"cat-wtab add\">+</button></div><div class=\"cat-win-controls\"><button class=\"cat-win-btn\" aria-label=\"Minimize\"><svg width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\"><path d=\"M5 12h14\"/></svg></button><button class=\"cat-win-btn\" aria-label=\"Maximize\"><svg width=\"9\" height=\"9\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"><rect x=\"5\" y=\"5\" width=\"14\" height=\"14\" rx=\"1.5\"/></svg></button><button class=\"cat-win-btn close\" aria-label=\"Close\"><svg width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\"><path d=\"M6 6l12 12M18 6L6 18\"/></svg></button></div></div>",
+   "css": [
+    "\n.cat-window-demo{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px 4px 14px;font-family:var(--cat-font-family-ui)}\n.cat-win-tabs{display:flex;align-items:center;gap:5px}\n.cat-wtab{display:inline-flex;align-items:center;height:30px;padding:0 12px;border-radius:7px;border:1px solid transparent;background:transparent;font:500 var(--cat-font-size-base) var(--cat-font-family-ui);color:var(--cat-color-ink-mid);cursor:pointer;transition:all var(--cat-motion-fast) ease}\n.cat-wtab:hover{background:rgba(255,255,255,.35);color:var(--cat-color-ink-hi)}\n.cat-wtab.is-active{background:var(--cat-semantic-tab-a);border-color:rgba(255,255,255,.85);color:var(--cat-color-ink-hi);font-weight:var(--cat-font-weight-semibold);box-shadow:0 1px 2px rgba(25,35,65,.08)}\n.cat-wtab.add{width:26px;height:26px;padding:0;border-radius:50%;justify-content:center}\n.cat-win-controls{display:flex;gap:2px}\n.cat-win-btn{display:grid;place-items:center;width:30px;height:26px;border-radius:var(--cat-size-radius-sm);background:none;border:none;color:var(--cat-color-ink-hi);font-size:11px;cursor:pointer;transition:background var(--cat-motion-fast),transform var(--cat-motion-fast)}\n.cat-win-btn:hover{background:rgba(0,0,0,.06)}\n.cat-win-btn:active{transform:scale(.92)}\n.cat-win-btn.close:hover{background:var(--cat-color-danger-base);color:#fff}\n.cat-win-btn.close:active{background:var(--cat-color-danger-hover)}\n.cat-window{display:flex;flex-direction:column;border-radius:var(--cat-size-radius-window);background:var(--cat-semantic-glass-window,var(--cat-color-surface-glass-window));backdrop-filter:blur(var(--cat-blur-window)) saturate(var(--cat-blur-saturate-window));-webkit-backdrop-filter:blur(var(--cat-blur-window)) saturate(var(--cat-blur-saturate-window));border:1px solid var(--cat-color-stroke-light);box-shadow:var(--cat-elevation-window),inset 0 1px 0 rgba(255,255,255,.65)}"
+   ]
+  },
+  "qt": {
+   "widget": "QMainWindow frameless hint",
+   "qss": [
+    "QWidget#catWindow{background:{$color.surface.glass-window$};border-radius:{$size.radius.window$};border:1px solid {$color.stroke.light$}"
+   ]
+  },
+  "note": "Blur real requiere atributo WA_TranslucentBackground + efecto por plataforma."
+ },
+ "docs": {
+  "demos": [
+   "<div style=\"border-radius:12px;background:rgba(247,249,253,.68);backdrop-filter:blur(46px) saturate(1.7);border:1px solid rgba(255,255,255,.55);box-shadow:0 24px 80px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.65)\" class=\"cat-window-demo\"><div class=\"cat-win-tabs\"><button class=\"cat-wtab is-active\">Documents</button><button class=\"cat-wtab\">Music</button><button class=\"cat-wtab add\">+</button></div><div class=\"cat-win-controls\"><button class=\"cat-win-btn\"><svg width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\"><path d=\"M5 12h14\"/></svg></button><button class=\"cat-win-btn\"><svg width=\"9\" height=\"9\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"><rect x=\"5\" y=\"5\" width=\"14\" height=\"14\" rx=\"1.5\"/></svg></button><button class=\"cat-win-btn close\"><svg width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\"><path d=\"M6 6l12 12M18 6L6 18\"/></svg></button></div></div>"
+  ]
+ },
+ "guidance": {
+  "use": [
+   "Ventanas de nivel app sobre el escritorio."
+  ],
+  "avoid": [
+   "Controles dentro de cards embebidas."
+  ],
+  "rules": [
+   "Cerrar con hover rojo: convencion de destruccion."
+  ]
+ }
+}

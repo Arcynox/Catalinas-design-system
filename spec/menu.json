@@ -1,0 +1,44 @@
+{
+ "name": "menu",
+ "description": "Dropdown flotante nivel depth.dropdown. Trigger por data-attr.",
+ "states": [
+  "open",
+  "item-hover(accent fill HIG)",
+  "item-checked",
+  "kbd-hint"
+ ],
+ "targets": {
+  "web": {
+   "markup": "<div data-cat-menu><button class=\"cat-btn secondary\" data-cat-menu-trigger aria-expanded=\"false\">Options ▾</button><div class=\"cat-menu\" role=\"menu\"><button class=\"cat-menu-item checked\" role=\"menuitem\">Details<span class=\"mi-check\"><svg width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 13l4 4 10-10\"/></svg></span></button><div class=\"cat-menu-sep\"></div><button class=\"cat-menu-item\" role=\"menuitem\">Rename<span class=\"menu-kbd\">F2</span></button></div></div>",
+   "css": [
+    "\n[data-cat-menu]{position:relative;display:inline-block}\n.cat-menu{position:absolute;top:calc(100% + 6px);left:0;min-width:200px;padding:5px;border-radius:var(--cat-size-radius-md);background:var(--cat-color-surface-menu);backdrop-filter:blur(var(--cat-blur-float)) saturate(var(--cat-blur-saturate-float));-webkit-backdrop-filter:blur(var(--cat-blur-float)) saturate(var(--cat-blur-saturate-float));border:1px solid var(--cat-color-stroke-menu);box-shadow:var(--cat-elevation-menu);z-index:var(--cat-depth-z-dropdown);opacity:0;transform:translateY(-4px);pointer-events:none;transition:opacity var(--cat-motion-fast) var(--cat-motion-ease-out),transform var(--cat-motion-fast) var(--cat-motion-ease-out)}\n.cat-menu.open,.open>.cat-menu{opacity:1;transform:none;pointer-events:auto}\n.cat-menu-item{display:flex;align-items:center;justify-content:space-between;gap:18px;width:calc(100% - 4px);height:27px;margin:0 2px;padding:0 8px;border-radius:var(--cat-size-radius-menu-item);font:400 var(--cat-font-size-base) var(--cat-font-family-ui);color:var(--cat-color-ink-hi);text-align:left;background:none;border:none;cursor:pointer}\n.cat-menu-item:hover{background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));color:#fff}\n.cat-menu-item:hover .menu-kbd{color:rgba(255,255,255,.72)}\n.cat-menu-item.checked .mi-check{visibility:visible}\n.mi-check{visibility:hidden;font-size:11px}\n.cat-menu-sep{height:1px;margin:5px 8px;background:var(--cat-color-stroke-dark)}\n.menu-kbd{font-size:var(--cat-font-size-sm);color:var(--cat-color-ink-low);letter-spacing:.02em}\n.cat-menu.up{top:auto;bottom:calc(100% + 6px);transform:translateY(4px)}\n.cat-menu.up.open{transform:translateY(0)}"
+   ]
+  },
+  "qt": {
+   "widget": "QMenu",
+   "qss": [
+    "QMenu{background:{$color.surface.menu$};border:1px solid {$color.stroke.menu$};border-radius:{$size.radius.md$};padding:5px}",
+    "QMenu::item{height:27px;padding:4px 24px 4px 8px;border-radius:{$size.radius.menu-item$};color:{$color.ink.hi$}}",
+    "QMenu::item:selected{background:{$color.accent.base$};color:white}",
+    "QMenu::separator{height:1px;background:{$color.stroke.dark$};margin:5px 8px}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<div data-cat-menu><button class=\"cat-btn secondary\" data-cat-menu-trigger aria-expanded=\"false\">Sort <svg class=\"chev\" width=\"10\" height=\"10\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 9l6 6 6-6\"/></svg></button><div class=\"cat-menu\" role=\"menu\"><button class=\"cat-menu-item checked\" role=\"menuitem\">Name<svg width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 13l4 4 10-10\"/></svg></button><button class=\"cat-menu-item\">Date Modified</button><div class=\"cat-menu-sep\"></div><button class=\"cat-menu-item\">Size<span class=\"menu-kbd\">Ctrl+S</span></button></div></div>"
+  ]
+ },
+ "guidance": {
+  "use": [
+   "Acciones secundarias que no merecen espacio permanente."
+  ],
+  "avoid": [
+   "Acciones frecuentes: quedan en toolbar."
+  ],
+  "rules": [
+   "Abre hacia arriba automaticamente si falta espacio abajo.",
+   "Items con shortcut muestran kbd a la derecha."
+  ]
+ }
+}

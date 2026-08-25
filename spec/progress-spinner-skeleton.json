@@ -1,0 +1,38 @@
+{
+ "name": "progress-spinner-skeleton",
+ "description": "Indicadores de progreso determinado, indeterminado y carga.",
+ "targets": {
+  "web": {
+   "markup": "<div class=\"cat-progress\"><div class=\"fill\" style=\"width:64%\"></div></div>",
+   "css": [
+    "\n.cat-progress{width:220px;height:4px;border-radius:var(--cat-size-radius-pill);background:rgba(0,0,0,.10);overflow:hidden}\n.cat-progress>.fill{height:100%;border-radius:inherit;background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));transition:width var(--cat-motion-slow) var(--cat-motion-ease-out)}\n.cat-progress.indeterminate>.fill{width:38%!important;animation:cat-indet 1.2s var(--cat-motion-ease-out) infinite}\n@keyframes cat-indet{0%{transform:translateX(-110%)}100%{transform:translateX(300%)}}\n.cat-spinner{width:18px;height:18px;border-radius:50%;border:2px solid var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));border-top-color:transparent;animation:cat-spin .7s linear infinite;display:inline-block}\n.cat-skeleton{border-radius:var(--cat-size-radius-sm);background:linear-gradient(90deg,rgba(0,0,0,.05) 25%,rgba(0,0,0,.10) 37%,rgba(0,0,0,.05) 63%);background-size:400% 100%;animation:cat-shimmer 1.4s ease infinite}\n@keyframes cat-shimmer{0%{background-position:100% 0}100%{background-position:-100% 0}}\n.cat-skeleton.text{height:10px;margin:6px 0}\n.cat-skeleton.av{width:36px;height:36px;border-radius:50%}"
+   ]
+  },
+  "qt": {
+   "widget": "QProgressBar",
+   "qss": [
+    "QProgressBar{background:rgba(0,0,0,26);border:none;border-radius:{$size.radius.pill$};height:6px;text-align:right}",
+    "QProgressBar::chunk{background:{$color.accent.base$};border-radius:{$size.radius.pill$}}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<div class=\"cat-progress\"><div class=\"fill\" style=\"width:64%\"></div></div>",
+   "<div class=\"cat-progress indeterminate\"><div class=\"fill\"></div></div>",
+   "<span class=\"cat-spinner\"></span>",
+   "<div style=\"width:200px\"><div class=\"cat-skeleton av\"></div><div class=\"cat-skeleton text\" style=\"width:80%\"></div><div class=\"cat-skeleton text\" style=\"width:55%\"></div></div>"
+  ]
+ },
+ "guidance": {
+  "use": [
+   "Progress bar: duracion conocida. Spinner: desconocida y corta. Skeleton: layout predecible."
+  ],
+  "avoid": [
+   "Spinner para esperas mayores a 3s con progreso medible."
+  ],
+  "rules": [
+   "Indeterminado comunica vida, no progreso real."
+  ]
+ }
+}

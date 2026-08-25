@@ -1,0 +1,23 @@
+{
+ "name": "key-value-list",
+ "description": "Lista definicion clave/valor para metadata y propiedades.",
+ "targets": {
+  "web": {
+   "markup": "<dl class=\"cat-kv\"><div><dt>Size</dt><dd>4.33 GB</dd></div><div><dt>Items</dt><dd>67</dd></div><div><dt>Modified</dt><dd>Aug 25, 2026</dd></div></dl>",
+   "css": [
+    "\n.cat-kv{margin:0;display:flex;flex-direction:column;font-size:var(--cat-font-size-base)}\n.cat-kv>div{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:7px 2px}\n.cat-kv>div+div{border-top:1px solid var(--cat-color-stroke-softer)}\n.cat-kv dt{color:var(--cat-color-ink-mid)}\n.cat-kv dd{margin:0;color:var(--cat-color-ink-hi);font-weight:500;text-align:right}"
+   ]
+  },
+  "qt": {
+   "widget": "QFormLayout",
+   "qss": [
+    "QFormLayout QLabel{color:{$color.ink.mid$}}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<dl class=\"cat-kv\" style=\"width:260px\"><div><dt>Tamano</dt><dd>4.33 GB</dd></div><div><dt>Elementos</dt><dd>67</dd></div><div><dt>Modificado</dt><dd>Aug 25, 2026</dd></div></dl>"
+  ]
+ }
+}

@@ -1,0 +1,24 @@
+{
+ "name": "form-validation",
+ "description": "Validacion declarativa: required/email/minLength via atributos. Errores inline y evento cat:valid.",
+ "states": ["valid", "error-inline", "submitted-invalid"],
+ "targets": {
+  "web": {
+   "markup": "<form class=\"cat-form\" data-cat-validate novalidate><div class=\"cat-field\"><label class=\"cat-label\">Email *</label><div class=\"cat-input has-icon\"><input class=\"el\" required data-cat-type=\"email\" placeholder=\"tu@email.com\"></div></div></form>",
+   "css": [
+    ".cat-form{display:flex;flex-direction:column;gap:12px;width:100%;max-width:360px;font-family:var(--cat-font-family-ui)}",
+    ".cat-form .actions{display:flex;justify-content:flex-end;gap:8px}"
+   ]
+  },
+  "qt": {
+   "widget": "(QValidator pattern)",
+   "qss": []
+  }
+ },
+ "docs": {
+  "demos": [
+   "<form class=\"cat-form\" data-cat-validate novalidate onsubmit=\"return false\"><div class=\"cat-field\"><label class=\"cat-label\">Email *</label><div class=\"cat-input has-icon\"><span class=\"cat-icon\"><svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"M3 7l9 6 9-6\"/></svg></span><input class=\"el\" required data-cat-type=\"email\" placeholder=\"tu@email.com\"></div></div><div class=\"cat-field\"><label class=\"cat-label\">Password *</label><div class=\"cat-input\"><input class=\"el\" type=\"password\" required minlength=\"6\" placeholder=\"min 6 caracteres\"></div></div><button class=\"cat-btn primary\" style=\"align-self:flex-end\">Enviar</button></form>"
+  ],
+  "note": "Submit invalido -> errores inline por campo + evento cat:valid para la logica de tu app. Sin alerts."
+ }
+}

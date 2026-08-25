@@ -1,0 +1,43 @@
+{
+ "name": "empty-state",
+ "description": "Estado vacio: orbe con icono, titulo, descripcion y accion primaria.",
+ "anatomy": [
+  "orb",
+  "title",
+  "message",
+  "action"
+ ],
+ "states": [
+  "default",
+  "hover(action)"
+ ],
+ "targets": {
+  "web": {
+   "markup": "<div class=\"cat-empty\"><div class=\"cat-empty-orb\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M13 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9z\"/><path d=\"M13 3v6h6\"/><path d=\"M12 12v6m-3-3h6\"/></svg></div><h4 class=\"cat-empty-title\">Sin resultados</h4><p class=\"cat-empty-msg\">Proba con otros terminos o crea algo nuevo.</p><button class=\"cat-btn primary sm\">Crear</button></div>",
+   "css": [
+    "\n.cat-empty{display:flex;flex-direction:column;align-items:center;text-align:center;padding:44px 28px;font-family:var(--cat-font-family-ui)}\n.cat-empty-orb{width:64px;height:64px;border-radius:20px;display:grid;place-items:center;margin-bottom:16px;color:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));background:var(--cat-semantic-panel-tint);border:1px solid var(--cat-color-stroke-input);box-shadow:none}\n.cat-empty-orb svg{width:26px;height:26px}\n.cat-empty-title{margin:0;font-size:var(--cat-font-size-lg);font-weight:600;color:var(--cat-color-ink-hi)}\n.cat-empty-msg{margin:5px 0 18px;font-size:var(--cat-font-size-base);color:var(--cat-color-ink-mid);max-width:300px;line-height:1.55}\n"
+   ]
+  },
+  "qt": {
+   "widget": "QLabel stack",
+   "qss": []
+  }
+ },
+ "docs": {
+  "demos": [
+   "<div class=\"cat-empty\"><div class=\"cat-empty-orb\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M13 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9z\"/><path d=\"M13 3v6h6\"/><path d=\"M12 12v6m-3-3h6\"/></svg></div><h4 class=\"cat-empty-title\">Sin resultados</h4><p class=\"cat-empty-msg\">Proba con otros terminos o crea algo nuevo.</p><button class=\"cat-btn primary sm\">Crear</button></div>",
+   "<div class=\"cat-empty\"><div class=\"cat-empty-orb\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M13 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9z\"/><path d=\"M13 3v6h6\"/><path d=\"M12 12v6m-3-3h6\"/></svg></div><h4 class=\"cat-empty-title\">KittyDrive vacio</h4><p class=\"cat-empty-msg\">Arrastra archivos para empezar a sincronizar con la nube.</p><button class=\"cat-btn secondary sm\">Ver planes</button></div>"
+  ]
+ },
+ "guidance": {
+  "use": [
+   "Primer uso y resultados vacios: ensena el proximo paso."
+  ],
+  "avoid": [
+   "Culpar al usuario; tono neutro y accion claro."
+  ],
+  "rules": [
+   "Orbe + titulo corto + una sola accion primary."
+  ]
+ }
+}

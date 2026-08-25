@@ -1,0 +1,37 @@
+{
+ "name": "command-palette",
+ "description": "Palette de comandos global (Ctrl+K / Cmd+K). Busca, navega con flechas, ejecuta con Enter.",
+ "anatomy": ["overlay", "panel", "input", "results", "foot"],
+ "states": ["closed", "open", "filtering", "active-item"],
+ "targets": {
+  "web": {
+   "markup": "<div class=\"cat-cmdk-overlay open\"><div class=\"cat-cmdk\" role=\"dialog\" aria-modal=\"true\"><input class=\"cmdk-input\" placeholder=\"Escribe un comando...\"><div class=\"cmdk-list\"><button class=\"cat-menu-item cmdk-item is-active\" role=\"option\">Nuevo archivo<span class=\"menu-kbd\">N</span></button><button class=\"cat-menu-item cmdk-item\" role=\"option\">Abrir reciente<span class=\"menu-kbd\">Ctrl+O</span></button></div><div class=\"cmdk-foot\"><span class=\"menu-kbd\">ESC cerrar</span></div></div></div>",
+   "css": [
+    ".cat-cmdk-overlay{position:fixed;inset:0;z-index:var(--cat-depth-z-toast);background:rgba(10,12,24,.38);backdrop-filter:blur(4px);display:none;align-items:flex-start;justify-content:center;padding-top:14vh}",
+    ".cat-cmdk-overlay.open{display:flex}",
+    ".cat-cmdk{width:min(520px,92vw);border-radius:var(--cat-size-radius-lg);background:var(--cat-color-surface-menu);backdrop-filter:blur(var(--cat-blur-float)) saturate(var(--cat-blur-saturate-float));-webkit-backdrop-filter:blur(var(--cat-blur-float)) saturate(var(--cat-blur-saturate-float));border:1px solid var(--cat-color-stroke-menu);box-shadow:var(--cat-elevation-menu);overflow:hidden;font-family:var(--cat-font-family-ui)}",
+    ".cmdk-input{width:100%;height:44px;padding:0 16px;border:none;outline:none;background:transparent;border-bottom:1px solid var(--cat-color-stroke-dark);font:400 15px var(--cat-font-family-ui);color:var(--cat-color-ink-hi)}",
+    ".cmdk-input::placeholder{color:var(--cat-color-ink-low)}",
+    ".cmdk-list{max-height:280px;overflow-y:auto;padding:5px}",
+    ".cmdk-item{width:calc(100% - 4px);margin:0 2px}",
+    ".cmdk-item.is-active{background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));color:#fff}",
+    ".cmdk-item.is-active .menu-kbd{color:rgba(255,255,255,.72)}",
+    ".cmdk-foot{padding:7px 12px;border-top:1px solid var(--cat-color-stroke-softer)}"
+   ]
+  },
+  "qt": {
+   "widget": "QDialog + QLineEdit + QListWidget",
+   "qss": [
+    "QDialog[cat=\"cmdk\"]{background:{$color.surface.menu$};border-radius:{$size.radius.lg$}}",
+    "QLineEdit[cat=\"cmdkInput\"]{background:transparent;border:none;border-bottom:1px solid {$color.stroke.dark$};font-size:{$font.size.lg$};padding:10px 14px}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<button class=\"cat-btn primary\" id=\"demoCmdkBtn\">Abrir palette (o Ctrl+K)</button>",
+   "<p class=\"caption\">Con un contenedor <code>data-cat-command</code>, Ctrl+K toma los items automaticamente.</p>"
+  ],
+  "note": "Flechas navegan, Enter ejecuta, ESC cierra. Filtrado instantaneo."
+ }
+}

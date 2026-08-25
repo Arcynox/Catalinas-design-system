@@ -1,0 +1,27 @@
+{
+ "name": "tree-view",
+ "description": "Arbol jerarquico en contenido (no sidebar). Expand/collapse nativo via details-like con JS minimo opcional.",
+ "targets": {
+  "web": {
+   "markup": "<ul class=\"cat-tree\"><li class=\"branch open\"><div class=\"t-row\"><span class=\"tw\">-</span> Projects</div><ul><li><div class=\"t-row leaf\">catalinas</div></li><li><div class=\"t-row leaf\">kittydrive</div></li></ul></li></ul>",
+   "css": [
+    "\n.cat-tree,.cat-tree ul{list-style:none;margin:0;padding:0;font-size:var(--cat-font-size-base);color:var(--cat-color-ink-hi)}\n.cat-tree ul{padding-left:22px;border-left:1px solid var(--cat-color-stroke-softer);margin-left:9px;display:none}\n.cat-tree .branch.open>ul{display:block}\n.t-row{display:flex;align-items:center;gap:7px;height:28px;padding:0 8px;border-radius:var(--cat-size-radius-xs);cursor:pointer;transition:background var(--cat-motion-fast)}\n.t-row:hover{background:var(--cat-color-surface-hover)}\n.t-row.leaf{cursor:default}\n.tw{width:14px;text-align:center;color:var(--cat-color-ink-faint);font-family:var(--cat-font-family-mono);font-size:11px;user-select:none}\n.branch.open>.t-row .tw{transform:none}"
+   ]
+  },
+  "qt": {
+   "widget": "QTreeView",
+   "qss": [
+    "QTreeView::branch:has-children:closed{image:none}",
+    "QTreeView::item{height:26px;border-radius:{$size.radius.xs$};padding:2px 6px}",
+    "QTreeView::item:hover{background:rgba(0,0,0,14)}",
+    "QTreeView::item:selected{background:{$color.accent.base$};color:white}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<ul class=\"cat-tree\" id=\"tvDemo\" style=\"width:280px\" data-cat-tree><li class=\"branch open\"><div class=\"t-row\"><span class=\"tw\">-</span>KittyDrive</div><ul><li><div class=\"t-row leaf\">Projects</div></li><li><div class=\"t-row leaf\">Backups</div></li></ul></li><li class=\"branch\"><div class=\"t-row\"><span class=\"tw\">+</span>Cats</div><ul><li><div class=\"t-row leaf\">michi.jpg</div></li></ul></li></ul>"
+  ],
+  "note": "Toggle con JS del host: click en .branch > .t-row alterna clase open y el signo."
+ }
+}

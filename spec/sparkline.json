@@ -1,0 +1,28 @@
+{
+ "name": "sparkline",
+ "description": "Grafico SVG minimo: linea o barras desde data-values. Cero dependencias.",
+ "props": {
+  "data-cat-spark": "valores CSV",
+  "data-spark-type": "line | bars",
+  "data-width / data-height": "px"
+ },
+ "targets": {
+  "web": {
+   "markup": "<span class=\"cat-sparkline\" data-cat-spark=\"4,9,6,12,8,14\" data-spark-type=\"line\"></span>",
+   "css": [
+    ".cat-sparkline{display:inline-grid;place-items:center;color:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));vertical-align:middle}",
+    ".cat-sparkline[data-spark-type=bars]{color:var(--cat-color-violet)}",
+    ".cat-sparkline svg{overflow:visible}"
+   ]
+  },
+  "qt": {
+   "widget": "(custom paint)",
+   "qss": []
+  }
+ },
+ "docs": {
+  "demos": [
+   "<span class=\"cat-sparkline\" data-cat-spark=\"4,9,6,12,8,14\" data-width=\"120\" data-height=\"32\"></span> <span class=\"cat-sparkline\" data-cat-spark=\"3,7,5,10,13\" data-spark-type=\"bars\" data-width=\"120\" data-height=\"32\"></span> <span class=\"cat-sparkline\" data-cat-spark=\"10,8,11,7,9,6,8\" data-width=\"120\" data-height=\"32\"></span>"
+  ]
+ }
+}

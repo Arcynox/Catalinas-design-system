@@ -1,0 +1,25 @@
+{
+ "name": "card-toast",
+ "description": "Superficies por nivel de profundidad + notificaciones descartables.",
+ "targets": {
+  "web": {
+   "markup": "<div class=\"cat-card\">Card L2 (contenido)</div>",
+   "css": [
+    "\n.cat-card{padding:16px;border-radius:var(--cat-size-radius-lg);background:var(--cat-color-surface-content);border:1px solid var(--cat-color-stroke-light);box-shadow:var(--cat-elevation-panel);font:400 var(--cat-font-size-base) var(--cat-font-family-ui);color:var(--cat-color-ink-hi)}\n.cat-card.chip{background:var(--cat-color-surface-glass-chip);backdrop-filter:blur(var(--cat-blur-chip)) saturate(var(--cat-blur-saturate-chip));-webkit-backdrop-filter:blur(var(--cat-blur-chip)) saturate(var(--cat-blur-saturate-chip))}\n.cat-card.dark{background:var(--cat-color-dark-player-bg);color:var(--cat-color-dark-player-ink);border-color:rgba(255,255,255,.14);box-shadow:var(--cat-elevation-float)}\n.cat-card.float{background:var(--cat-semantic-float-a);backdrop-filter:blur(var(--cat-blur-float)) saturate(var(--cat-blur-saturate-float));-webkit-backdrop-filter:blur(var(--cat-blur-float)) saturate(var(--cat-blur-saturate-float));box-shadow:var(--cat-elevation-float),inset 0 1px 0 rgba(255,255,255,.7)}\n.cat-toasts{position:fixed;top:16px;right:16px;z-index:var(--cat-depth-z-toast);display:flex;flex-direction:column;gap:8px;width:320px;max-width:calc(100vw - 32px)}\n.cat-toast{display:flex;align-items:flex-start;gap:10px;padding:11px 12px;border-radius:var(--cat-size-radius-md);background:var(--cat-color-surface-menu);backdrop-filter:blur(var(--cat-blur-float));-webkit-backdrop-filter:blur(var(--cat-blur-float));border:1px solid var(--cat-color-stroke-menu);box-shadow:var(--cat-elevation-menu);font:400 var(--cat-font-size-base) var(--cat-font-family-ui);color:var(--cat-color-ink-hi);transition:opacity var(--cat-motion-med) ease,transform var(--cat-motion-med) var(--cat-motion-ease-out)}\n.cat-toast .t-icon{flex:none;width:8px;height:8px;border-radius:50%;background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));margin-top:5px}\n.cat-toast.success .t-icon{background:var(--cat-color-success)}\n.cat-toast.danger .t-icon{background:var(--cat-color-danger-base)}\n.cat-toast .t-close{margin-left:auto;background:none;border:none;color:var(--cat-color-ink-low);cursor:pointer;font-size:13px;line-height:1;padding:2px 4px;border-radius:4px}\n.cat-toast .t-close:hover{background:rgba(0,0,0,.07);color:var(--cat-color-ink-hi)}\n.cat-leaving{opacity:0!important;transform:translateY(6px)!important}"
+   ]
+  },
+  "qt": {
+   "widget": "QFrame",
+   "qss": [
+    "QFrame[cat=\"card\"]{background:{$color.surface.card$};border:1px solid {$color.stroke.light$};border-radius:{$size.radius.lg$}}",
+    "QFrame[cat=\"cardDark\"]{background:{$color.dark.player-bg$};border:1px solid rgba(255,255,255,36);border-radius:{$size.radius.lg$};color:{$color.dark.player-ink$}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<div style=\"display:flex;gap:12px;flex-wrap:wrap\"><div class=\"cat-card\" style=\"width:170px\">Card L2 contenido casi opaco</div><div class=\"cat-card chip\" style=\"width:170px\">Card chip translúcida</div><div class=\"cat-card dark\" style=\"width:170px\">Card dark funcional</div><div class=\"cat-card float\" style=\"width:170px\">Card float glass</div></div>",
+   "<div class=\"cat-toast\" style=\"position:static;margin-top:12px\"><span class=\"t-icon success\"></span><span>Backup completado</span><button class=\"t-close\" data-cat-dismiss=\".cat-toast\"><svg width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\"><path d=\"M6 6l12 12M18 6L6 18\"/></svg></button></div>"
+  ]
+ }
+}

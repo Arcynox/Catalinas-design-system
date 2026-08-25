@@ -1,0 +1,63 @@
+{
+ "name": "button",
+ "description": "Acción primaria, secundaria, fantasma, peligrosa o enlace.",
+ "anatomy": [
+  "container",
+  "label",
+  "icon"
+ ],
+ "props": {
+  "variant": "primary|secondary|ghost|danger|link",
+  "size": "sm|md|lg",
+  "icon": "optional",
+  "loading": "bool",
+  "disabled": "bool"
+ },
+ "states": [
+  "default",
+  "hover",
+  "active",
+  "focus-visible",
+  "disabled"
+ ],
+ "targets": {
+  "web": {
+   "markup": "<button class=\"cat-btn primary\">Primary</button>",
+   "css": [
+    "\n.cat-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:var(--cat-size-control-h-md);padding:0 14px;border-radius:var(--cat-size-radius-sm);border:1px solid transparent;font:500 var(--cat-font-size-base)/1 var(--cat-font-family-ui);cursor:pointer;text-decoration:none;transition:background var(--cat-motion-fast) var(--cat-motion-ease-out),filter var(--cat-motion-fast) ease,transform var(--cat-motion-fast) var(--cat-motion-ease-out),box-shadow var(--cat-motion-med) ease}\n.cat-btn:focus-visible{outline:none;box-shadow:0 0 0 var(--cat-size-border-focus-ring) var(--cat-semantic-accent-ring)}\n.cat-btn:active{transform:scale(.97)}\n.cat-btn:disabled,.cat-btn.disabled{opacity:.45;cursor:default;pointer-events:none}\n.cat-btn.primary{background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));color:#fff;box-shadow:none}\n.cat-btn.primary:hover{background:var(--cat-color-accent-hover)}\n.cat-btn.primary:active{background:var(--cat-color-accent-active)}\n.cat-btn.secondary{color:var(--cat-color-ink-hi);background:var(--cat-semantic-chip-a);border-color:var(--cat-color-stroke-light);box-shadow:var(--cat-elevation-chip-hover)}\n.cat-btn.secondary:hover{background:var(--cat-semantic-chip-hover-a)}\n.cat-btn.ghost{background:transparent;color:var(--cat-color-ink-mid)}\n.cat-btn.ghost:hover{background:var(--cat-color-surface-hover);color:var(--cat-color-ink-hi)}\n.cat-btn.danger{background:var(--cat-color-danger-base);color:#fff;box-shadow:none}\n.cat-btn.danger:hover{background:var(--cat-color-danger-hover)}\n.cat-btn.link{height:auto;padding:0;background:none;color:var(--cat-color-accent-base)}\n.cat-btn.link:hover{text-decoration:underline}\n.cat-btn.sm{height:var(--cat-size-control-h-sm);padding:0 10px;font-size:var(--cat-font-size-sm)}\n.cat-btn.lg{height:var(--cat-size-control-h-lg);padding:0 18px;font-size:var(--cat-font-size-lg)}\n.cat-btn .cat-icon{width:var(--cat-size-icon-md);height:var(--cat-size-icon-md)}",
+    ".cat-btn.loading{color:transparent!important;position:relative;pointer-events:none}\n.cat-btn.loading::after{content:\"\";position:absolute;width:14px;height:14px;border-radius:50%;border:2px solid currentColor;border-top-color:transparent;animation:cat-spin .7s linear infinite}\n@keyframes cat-spin{to{transform:rotate(360deg)}}"
+   ]
+  },
+  "qt": {
+   "widget": "QPushButton",
+   "property_map": "variant -> dynamic property `cat`",
+   "qss": [
+    "QPushButton[cat=\"primary\"]{background:{$color.accent.base$};color:white;border:1px solid transparent;border-radius:{$size.radius.sm$};padding:6px 14px;font-weight:500}",
+    "QPushButton[cat=\"primary\"]:hover{background:{$color.accent.hover$}}",
+    "QPushButton[cat=\"primary\"]:pressed{background:{$color.accent.active$}}",
+    "QPushButton[cat=\"secondary\"]{background:palette(base);color:{$color.ink.hi$};border:1px solid {$color.stroke.light$};border-radius:{$size.radius.sm$};padding:6px 14px}",
+    "QPushButton[cat=\"danger\"]{background:{$color.danger.base$};color:white;border:none;border-radius:{$size.radius.sm$};padding:6px 14px}",
+    "QPushButton:disabled{opacity:0.45}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<button class=\"cat-btn primary\">Primary</button><button class=\"cat-btn secondary\">Secondary</button><button class=\"cat-btn ghost\">Ghost</button><button class=\"cat-btn danger\">Danger</button><button class=\"cat-btn link\">Link</button><span style=\"width:12px\"></span><button class=\"cat-btn primary sm\">Small</button><button class=\"cat-btn primary loading\">Loading</button><button class=\"cat-btn primary disabled\">Disabled</button>"
+  ]
+ },
+ "guidance": {
+  "use": [
+   "Accion principal de una vista: una sola primary por pantalla.",
+   "Danger solo para acciones destructivas e irreversibles."
+  ],
+  "avoid": [
+   "Botones ghost para acciones criticas: poca affordance.",
+   "Tres o mas botones en fila: convertilo en menu."
+  ],
+  "rules": [
+   "Orden HIG: primario a la derecha en dialogos, a la izquierda en toolbars.",
+   "Loading deshabilita el boton; nunca doble submit."
+  ]
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "name": "file-chip",
+ "description": "Chip de archivo adjunto/subido: icono, nombre, peso, remover.",
+ "targets": {
+  "web": {
+   "markup": "<span class=\"cat-filechip\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#5f8af5\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z\"/><path d=\"M14 3v5h5\"/></svg><span class=\"fc-name\">informe.pdf</span><span class=\"fc-size\">2.4 MB</span><button class=\"fc-x\" aria-label=\"Quitar\">x</button></span>",
+   "css": [
+    "\n.cat-filechip{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 8px 0 10px;border-radius:var(--cat-size-radius-sm);background:var(--cat-color-surface-card);border:1px solid var(--cat-color-stroke-dark);font-family:var(--cat-font-family-ui)}\n.fc-name{font-size:var(--cat-font-size-sm);font-weight:550;color:var(--cat-color-ink-hi);max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}\n.fc-size{font-size:var(--cat-font-size-xs);color:var(--cat-color-ink-low)}\n.fc-x{background:none;border:none;color:var(--cat-color-ink-low);cursor:pointer;font-size:11px;line-height:1;padding:4px;border-radius:4px}\n.fc-x:hover{background:var(--cat-color-surface-hover);color:var(--cat-color-ink-hi)}\n.cat-filechip.uploading .fc-name::after{content:\" ...\";color:var(--cat-color-ink-faint)}"
+   ]
+  },
+  "qt": {
+   "widget": "QFrame",
+   "qss": [
+    "QFrame[cat=\"fileChip\"]{background:{$color.surface.card$};border:1px solid {$color.stroke.dark$};border-radius:{$size.radius.sm$}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<span class=\"cat-filechip\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#5f8af5\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z\"/><path d=\"M14 3v5h5\"/></svg><span class=\"fc-name\">informe-q4.pdf</span><span class=\"fc-size\">2.4 MB</span><button class=\"fc-x\" aria-label=\"Quitar\">x</button></span> <span class=\"cat-filechip uploading\"><svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#e8776f\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z\"/><path d=\"M14 3v5h5\"/><path d=\"M9 14h6M9 17h4\"/></svg><span class=\"fc-name\">deck-final.pptx</span><span class=\"fc-size\">18 MB</span><button class=\"fc-x\" aria-label=\"Quitar\">x</button></span>"
+  ]
+ }
+}

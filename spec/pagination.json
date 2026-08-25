@@ -1,0 +1,21 @@
+{
+ "name": "pagination",
+ "description": "Paginador compacto con estados activo/disabled.",
+ "targets": {
+  "web": {
+   "markup": "<nav class=\"cat-pagination\"><button class=\"page prev\" disabled>&lt;</button><button class=\"page is-active\">1</button><button class=\"page\">2</button><button class=\"page\">3</button><span class=\"ellip\">&hellip;</span><button class=\"page\">12</button><button class=\"page next\">&gt;</button></nav>",
+   "css": [
+    "\n.cat-pagination{display:inline-flex;align-items:center;gap:4px;font-family:var(--cat-font-family-ui)}\n.cat-pagination .page{min-width:28px;height:28px;padding:0 6px;border-radius:var(--cat-size-radius-sm);border:none;background:none;font:500 var(--cat-font-size-sm) var(--cat-font-family-ui);color:var(--cat-color-ink-mid);cursor:pointer;transition:all var(--cat-motion-fast)}\n.cat-pagination .page:hover{background:rgba(255,255,255,.55);color:var(--cat-color-ink-hi)}\n.cat-pagination .page.is-active{background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));color:#fff;font-weight:600}\n.cat-pagination .page:disabled{opacity:.4;cursor:default;background:none}\n.cat-pagination .ellip{color:var(--cat-color-ink-faint);padding:0 2px}"
+   ]
+  },
+  "qt": {
+   "widget": "QToolBar",
+   "qss": []
+  }
+ },
+ "docs": {
+  "demos": [
+   "<nav class=\"cat-pagination\"><button class=\"page prev\" disabled>&lt;</button><button class=\"page is-active\">1</button><button class=\"page\">2</button><button class=\"page\">3</button><span class=\"ellip\">&hellip;</span><button class=\"page\">12</button><button class=\"page next\">&gt;</button></nav>"
+  ]
+ }
+}

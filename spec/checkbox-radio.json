@@ -1,0 +1,44 @@
+{
+ "name": "checkbox-radio",
+ "description": "Selección múltiple y exclusiva.",
+ "states": [
+  "checked",
+  "focus-visible",
+  "disabled"
+ ],
+ "targets": {
+  "web": {
+   "markup": "<label class=\"cat-check\"><input type=\"checkbox\" checked><span class=\"box\"></span>Checkbox</label>",
+   "css": [
+    "\n.cat-check,.cat-radio{display:inline-flex;align-items:center;gap:8px;font:400 var(--cat-font-size-base) var(--cat-font-family-ui);color:var(--cat-color-ink-hi);cursor:pointer;user-select:none}\n.cat-check input,.cat-radio input{position:absolute;opacity:0;width:0;height:0}\n.cat-check .box{width:17px;height:17px;border-radius:var(--cat-size-radius-xs);border:1.5px solid var(--cat-color-stroke-input);background:rgba(255,255,255,.6);display:grid;place-items:center;transition:all var(--cat-motion-fast) var(--cat-motion-ease-out)}\n.cat-check .box::after{content:\"\";width:9px;height:5px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg) translate(1px,-1px) scale(0);transition:transform var(--cat-motion-fast) var(--cat-motion-spring)}\n.cat-check input:checked+.box{background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));border-color:transparent}\n.cat-check input:checked+.box::after{transform:rotate(-45deg) translate(1px,-1px) scale(1)}\n.cat-radio .box{border-radius:50%}\n.cat-radio .box::after{content:\"\";width:8px;height:8px;border-radius:50%;background:#fff;transform:scale(0);transition:transform var(--cat-motion-fast) var(--cat-motion-spring)}\n.cat-radio input:checked+.box{background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));border-color:transparent}\n.cat-radio input:checked+.box::after{transform:scale(1)}\n.cat-check input:focus-visible+.box,.cat-radio input:focus-visible+.box{box-shadow:0 0 0 var(--cat-size-border-focus-ring) var(--cat-semantic-accent-ring)}\n.cat-check input:disabled~*,.cat-radio input:disabled~*{opacity:.5}"
+   ]
+  },
+  "qt": {
+   "widget": "QCheckBox / QRadioButton",
+   "qss": [
+    "QCheckBox::indicator,QGroupBox::indicator{width:17px;height:17px;border-radius:4px;border:1.5px solid {$color.stroke.input$};background:rgba(255,255,255,160)}",
+    "QCheckBox::indicator:checked{background:{$color.accent.base$};border-color:transparent}",
+    "QRadioButton::indicator{width:17px;height:17px;border-radius:{$size.radius.pill$};border:1.5px solid {$color.stroke.input$};background:rgba(255,255,255,160)}",
+    "QRadioButton::indicator:checked{background:{$color.accent.base$};border-color:transparent}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<label class=\"cat-check\"><input type=\"checkbox\" checked><span class=\"box\"></span>Notificar</label>",
+   "<label class=\"cat-radio\"><input type=\"radio\" name=\"r1\" checked><span class=\"box\"></span>Opción 1</label> <label class=\"cat-radio\"><input type=\"radio\" name=\"r1\"><span class=\"box\"></span>Opción 2</label>"
+  ]
+ },
+ "guidance": {
+  "use": [
+   "Checkbox: seleccion multiple pendiente de confirmar.",
+   "Radio: 2-5 opciones exclusivas visibles de una vez."
+  ],
+  "avoid": [
+   "Radio con mas de 5 opciones: usa select o segmented."
+  ],
+  "rules": [
+   "Un grupo de radios nunca empieza sin opcion marcada si la eleccion es requerida."
+  ]
+ }
+}

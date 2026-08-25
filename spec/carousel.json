@@ -1,0 +1,24 @@
+{
+ "name": "carousel",
+ "description": "Carrusel horizontal con scroll-snap y flechas prev/next.",
+ "targets": {
+  "web": {
+   "markup": "<div class=\"car-wrap\"><div class=\"car-head\"><b>Galeria</b><span class=\"car-nav\"><button data-cat-car-prev aria-label=\"Anterior\">&#8249;</button><button data-cat-car-next aria-label=\"Siguiente\">&#8250;</button></span></div><div class=\"cat-carousel\"><div class=\"slide\"><b>Favoritos</b><span>12 items</span></div><div class=\"slide\"><b>Recientes</b><span>67 items</span></div><div class=\"slide\"><b>Compartidos</b><span>8 items</span></div><div class=\"slide\"><b>Papelera</b><span>3 items</span></div><div class=\"slide\"><b>Descargas</b><span>21 items</span></div></div></div>",
+   "css": [
+    ".car-wrap{width:min(480px,100%);font-family:var(--cat-font-family-ui)}.car-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}.car-head b{font-size:var(--cat-font-size-base);color:var(--cat-color-ink-hi)}.car-nav button{width:26px;height:26px;margin-left:4px;border:1px solid var(--cat-color-stroke-input);border-radius:50%;background:var(--cat-color-surface-card);color:var(--cat-color-ink-mid);cursor:pointer;font-size:14px;line-height:1;transition:all var(--cat-motion-fast)}.car-nav button:hover{background:#fff;color:var(--cat-color-ink-hi)}.cat-carousel{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px;scrollbar-width:none}.cat-carousel::-webkit-scrollbar{display:none}.cat-carousel .slide{flex:0 0 150px;height:104px;scroll-snap-align:start;border-radius:var(--cat-size-radius-md);background:var(--cat-color-surface-card);border:1px solid var(--cat-color-stroke-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px}.cat-carousel .slide b{font-size:var(--cat-font-size-sm);font-weight:600;color:var(--cat-color-ink-hi)}.cat-carousel .slide span{font-size:var(--cat-font-size-xs);color:var(--cat-color-ink-low)}"
+   ],
+   "js": "document.addEventListener(\"click\", e => {\n  const btn = e.target.closest(\"[data-cat-car-next],[data-cat-car-prev]\");\n  if (!btn) return;\n  const wrap = btn.closest(\".car-wrap\");\n  const car = wrap && wrap.querySelector(\".cat-carousel\");\n  if (!car) return;\n  const first = car.firstElementChild;\n  const step = first ? (first.getBoundingClientRect().width + 12) : 162;\n  car.scrollBy({ left: btn.hasAttribute(\"data-cat-car-next\") ? step : -step, behavior: \"smooth\" });\n});"
+  },
+  "qt": {
+   "widget": "(custom)",
+   "qss": [
+    "QWidget[cat=\"slide\"]{background:{$color.surface.card$};border:1px solid {$color.stroke.dark$};border-radius:{$size.radius.md$}}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<div class=\"car-wrap\"><div class=\"car-head\"><b>Favoritos</b><span class=\"car-nav\"><button data-cat-car-prev aria-label=\"Anterior\">&#8249;</button><button data-cat-car-next aria-label=\"Siguiente\">&#8250;</button></span></div><div class=\"cat-carousel\"><div class=\"slide\"><b>Favoritos</b><span>12 items</span></div><div class=\"slide\"><b>Recientes</b><span>67 items</span></div><div class=\"slide\"><b>Compartidos</b><span>8 items</span></div><div class=\"slide\"><b>Papelera</b><span>3 items</span></div><div class=\"slide\"><b>Descargas</b><span>21 items</span></div></div></div>"
+  ]
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "name": "filter-chips",
+ "description": "Chips de filtro multi-seleccion con estado activo accent.",
+ "targets": {
+  "web": {
+   "markup": "<div class=\"cat-chips\"><label class=\"chip active\">Documentos<input type=\"checkbox\" checked hidden></label><label class=\"chip\">Presentaciones<input type=\"checkbox\" hidden></label><label class=\"chip\">Carpetas<input type=\"checkbox\" hidden></label></div>",
+   "css": [
+    "\n.cat-chips{display:inline-flex;flex-wrap:wrap;gap:6px;font-family:var(--cat-font-family-ui)}\n.chip{position:relative;display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 12px;border-radius:var(--cat-size-radius-pill);border:1px solid var(--cat-color-stroke-input);background:rgba(255,255,255,.45);font:500 var(--cat-font-size-sm) var(--cat-font-family-ui);color:var(--cat-color-ink-mid);cursor:pointer;user-select:none;transition:all var(--cat-motion-fast) var(--cat-motion-ease-out)}\n.chip:hover{background:#fff;color:var(--cat-color-ink-hi)}\n.chip input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}\n.chip.active{background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));border-color:transparent;color:#fff;font-weight:600}\n.chip:has(input:focus-visible){box-shadow:0 0 0 var(--cat-size-border-focus-ring) var(--cat-semantic-accent-ring)}"
+   ]
+  },
+  "qt": {
+   "widget": "QPushButton checkable",
+   "qss": [
+    "QPushButton[cat=\"chip\"]{border-radius:{$size.radius.pill$};border:1px solid {$color.stroke.input$};background:rgba(255,255,255,120);padding:4px 12px;font-size:{$font.size.sm$};color:{$color.ink.mid$}}",
+    "QPushButton[cat=\"chip\"]:checked{background:{$color.accent.base$};border-color:transparent;color:white;font-weight:600}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<div class=\"cat-chips\" data-cat-chips><label class=\"chip active\">Documentos<input type=\"checkbox\" checked hidden></label><label class=\"chip\">Presentaciones<input type=\"checkbox\" hidden></label><label class=\"chip\">Carpetas<input type=\"checkbox\" hidden></label><label class=\"chip\">Imagenes<input type=\"checkbox\" hidden></label></div>"
+  ],
+  "note": "data-cat-chips activa toggle automatico de .active en catalinas.js"
+ }
+}

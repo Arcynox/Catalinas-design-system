@@ -1,0 +1,27 @@
+{
+ "name": "breadcrumb-toolbar",
+ "description": "Ruta jerárquica + banda de acciones con gradiente de identidad.",
+ "targets": {
+  "web": {
+   "markup": "<nav class=\"cat-breadcrumb\"><span class=\"crumb\">This PC</span><span class=\"sep\">›</span><span class=\"crumb current\">Documents</span></nav>",
+   "css": [
+    "\n.cat-breadcrumb{display:flex;align-items:center;gap:8px;font:400 var(--cat-font-size-base) var(--cat-font-family-ui)}\n.cat-breadcrumb .crumb{color:var(--cat-color-ink-low);cursor:pointer;transition:color var(--cat-motion-fast)}\n.cat-breadcrumb .crumb:hover{color:var(--cat-color-ink-hi)}\n.cat-breadcrumb .crumb.current{color:var(--cat-color-ink-hi);font-weight:600;cursor:default}\n.cat-breadcrumb .sep{color:var(--cat-color-ink-faint)}\n.cat-toolbar{display:inline-flex;align-items:center;gap:2px;padding:5px 8px;border-radius:var(--cat-size-radius-md);background:var(--cat-semantic-toolbar-bg,var(--cat-color-accent-subtle-b));border:1px solid var(--cat-color-stroke-input);backdrop-filter:blur(var(--cat-blur-chip)) saturate(var(--cat-blur-saturate-chip));-webkit-backdrop-filter:blur(var(--cat-blur-chip)) saturate(var(--cat-blur-saturate-chip));box-shadow:none}\n.cat-tool-btn{display:inline-flex;align-items:center;gap:7px;height:32px;padding:0 12px;border-radius:var(--cat-size-radius-sm);border:none;background:none;font:550 var(--cat-font-size-md) var(--cat-font-family-ui);color:var(--cat-color-ink-hi);cursor:pointer;transition:background var(--cat-motion-fast),transform var(--cat-motion-fast)}\n.cat-tool-btn:hover{background:rgba(255,255,255,.55)}\n.cat-tool-btn:active{transform:scale(.97)}\n.cat-tool-btn.primary{font-weight:650}\n.cat-tool-btn.primary .plus{display:grid;place-items:center;width:17px;height:17px;border-radius:50%;background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));color:#fff;font-size:11px}\n.cat-tool-sep{width:1px;height:18px;margin:0 8px;background:rgba(20,30,60,.10)}",
+    "\n.nav-seg{display:inline-flex;align-items:center;height:30px;border-radius:10px;background:var(--cat-semantic-chip-a);border:1px solid var(--cat-color-stroke-input);overflow:hidden}\n.nav-btn{display:grid;place-items:center;width:34px;height:100%;border:none;background:none;color:var(--cat-color-ink-hi);cursor:pointer;transition:background var(--cat-motion-fast),transform var(--cat-motion-fast)}\n.nav-btn:hover{background:var(--cat-color-surface-hover)}\n.nav-btn:active{transform:scale(.94)}\n.nav-btn+.nav-btn{border-left:1px solid var(--cat-color-stroke-softer)}"
+   ]
+  },
+  "qt": {
+   "widget": "QToolBar",
+   "qss": [
+    "QToolBar{background:{$color.surface.content$};border-bottom:1px solid {$color.stroke.dark$};spacing:2px;padding:4px}",
+    "QToolButton{border-radius:{$size.radius.sm$};padding:5px 10px;color:{$color.ink.hi$}}",
+    "QToolButton:hover{background:rgba(0,0,0,14)}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<nav class=\"cat-breadcrumb\"><span class=\"crumb\">This PC</span><span class=\"sep\">›</span><span class=\"crumb current\">Documents</span></nav>",
+   "<div class=\"cat-toolbar\"><button class=\"cat-tool-btn primary\"><span class=\"plus\">+</span>Add New</button><span class=\"cat-tool-sep\"></span><button class=\"cat-tool-btn\">Organize ▾</button><button class=\"cat-tool-btn\">View ▾</button></div>"
+  ]
+ }
+}

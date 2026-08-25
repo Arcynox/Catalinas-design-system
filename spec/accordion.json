@@ -1,0 +1,28 @@
+{
+ "name": "accordion",
+ "description": "Colapsable nativo <details>, sin JS.",
+ "states": [
+  "open",
+  "closed",
+  "hover"
+ ],
+ "targets": {
+  "web": {
+   "markup": "<details class=\"cat-accordion\"><summary>Titulo<svg class=\"chev\" width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 9l6 6 6-6\"/></svg></summary><div class=\"body\">Contenido</div></details>",
+   "css": [
+    "\n.cat-accordion{border:1px solid var(--cat-color-stroke-dark);border-radius:var(--cat-size-radius-md);background:var(--cat-semantic-panel-tint);overflow:hidden;font-family:var(--cat-font-family-ui)}\n.cat-accordion+.cat-accordion{margin-top:6px}\n.cat-accordion summary{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;font:550 var(--cat-font-size-base) var(--cat-font-family-ui);color:var(--cat-color-ink-hi);cursor:pointer;list-style:none;transition:background var(--cat-motion-fast)}\n.cat-accordion summary::-webkit-details-marker{display:none}\n.cat-accordion summary:hover{background:var(--cat-color-surface-hover)}\n.cat-accordion[open] summary{border-bottom:1px solid var(--cat-color-stroke-softer)}\n.cat-accordion summary .chev{transition:transform var(--cat-motion-med) var(--cat-motion-ease-out);color:var(--cat-color-ink-faint)}\n.cat-accordion[open] summary .chev{transform:rotate(180deg)}\n.cat-accordion .body{padding:12px 14px;font-size:var(--cat-font-size-base);color:var(--cat-color-ink-mid);line-height:1.5}"
+   ]
+  },
+  "qt": {
+   "widget": "QToolBox",
+   "qss": [
+    "QToolBox::tab{background:rgba(255,255,255,120);border-radius:{$size.radius.sm$};padding:6px;color:{$color.ink.hi$}}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<div style=\"width:340px\"><details class=\"cat-accordion\" open><summary>KittyDrive<svg class=\"chev\" width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 9l6 6 6-6\"/></svg></summary><div class=\"body\">Projects, Photos y Backups sincronizados.</div></details><details class=\"cat-accordion\"><summary>Red<svg class=\"chev\" width=\"11\" height=\"11\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 9l6 6 6-6\"/></svg></summary><div class=\"body\">2 equipos conectados.</div></details></div>"
+  ]
+ }
+}

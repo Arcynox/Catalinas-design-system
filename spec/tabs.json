@@ -1,0 +1,40 @@
+{
+ "name": "tabs",
+ "description": "Pestañas chip aqua + paneles sincronizados por data-attrs.",
+ "states": [
+  "active(aqua chip)",
+  "inactive",
+  "hover"
+ ],
+ "targets": {
+  "web": {
+   "markup": "<div class=\"cat-tabs\" data-cat-tabs=\"demo\"><button class=\"cat-tab is-active\" data-cat-tab=\"a\">One</button><button class=\"cat-tab\" data-cat-tab=\"b\">Two</button></div>",
+   "css": [
+    "\n.cat-tabs{display:inline-flex;align-items:center;gap:5px}\n.cat-tab{display:inline-flex;align-items:center;gap:7px;height:30px;padding:0 12px;border-radius:7px;border:1px solid transparent;font:500 var(--cat-font-size-base) var(--cat-font-family-ui);color:var(--cat-color-ink-mid);background:transparent;cursor:pointer;white-space:nowrap;transition:background var(--cat-motion-fast) ease,color var(--cat-motion-fast) ease,box-shadow var(--cat-motion-med) var(--cat-motion-ease-out)}\n.cat-tab:hover{background:rgba(255,255,255,.35);color:var(--cat-color-ink-hi)}\n.cat-tab.is-active{background:var(--cat-semantic-tab-a);border-color:rgba(255,255,255,.85);color:var(--cat-color-ink-hi);font-weight:var(--cat-font-weight-semibold);box-shadow:0 1px 2px rgba(25,35,65,.08)}\n[data-cat-tabs]{position:relative}\n.cat-tabs>.cat-glider{top:0;bottom:0;left:0;border-radius:7px;background:var(--cat-semantic-tab-a);border:1px solid var(--cat-color-stroke-dark);box-shadow:0 1px 2px rgba(25,35,65,.10);transition:transform 240ms var(--cat-motion-spring),width 240ms var(--cat-motion-spring),opacity 150ms ease;opacity:0;z-index:0;width:max-content}\n.cat-tab{position:relative;z-index:1;background:none!important;border-color:transparent!important;box-shadow:none!important}\n.cat-tab.is-active{color:var(--cat-color-ink-hi);font-weight:var(--cat-font-weight-semibold)}\n.cat-tab:not(.is-active):hover{background:rgba(255,255,255,.35)!important}"
+   ]
+  },
+  "qt": {
+   "widget": "QTabBar",
+   "qss": [
+    "QTabBar::tab{background:transparent;color:{$color.ink.mid$};padding:6px 14px;border-radius:7px;margin-right:4px}",
+    "QTabBar::tab:selected{background:rgba(255,255,255,200);color:{$color.ink.hi$};font-weight:600;border:1px solid {$color.stroke.light$}}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<div class=\"cat-tabs\" data-cat-tabs=\"t1\"><button class=\"cat-tab is-active\" data-cat-tab=\"one\">Documents</button><button class=\"cat-tab\" data-cat-tab=\"two\">Music</button></div><div style=\"margin-top:12px;font-size:13px\" data-cat-panel-for=\"t1\" data-cat-panel=\"one\">Panel Documents</div><div style=\"margin-top:12px;font-size:13px\" data-cat-panel-for=\"t1\" data-cat-panel=\"two\" hidden>Panel Music</div>"
+  ]
+ },
+ "guidance": {
+  "use": [
+   "Cambiar de contexto o documento sin perder el lugar."
+  ],
+  "avoid": [
+   "Pasos secuenciales de un flujo: eso es stepper."
+  ],
+  "rules": [
+   "Tab activo claramente elevado; nunca dos activos."
+  ]
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "name": "slider",
+ "description": "Range nativo con thumb grande (zona táctil > visual, spec §40).",
+ "targets": {
+  "web": {
+   "markup": "<input class=\"cat-slider\" type=\"range\" min=\"0\" max=\"100\" value=\"40\">",
+   "css": [
+    "\n.cat-slider{-webkit-appearance:none;appearance:none;width:180px;height:20px;background:none;cursor:pointer}\n.cat-slider::-webkit-slider-runnable-track{height:4px;border-radius:var(--cat-size-radius-pill);background:var(--cat-semantic-slider-track,rgba(0,0,0,.14))}\n.cat-slider::-webkit-slider-thumb{-webkit-appearance:none;width:15px;height:15px;margin-top:-5.5px;border-radius:50%;background:#fff;border:.5px solid rgba(0,0,0,.15);box-shadow:0 1px 4px rgba(0,0,0,.28);transition:transform var(--cat-motion-fast) ease-out}\n.cat-slider::-webkit-slider-thumb:hover{transform:scale(1.12)}\n.cat-slider::-moz-range-track{height:4px;border-radius:var(--cat-size-radius-pill);background:rgba(0,0,0,.14)}\n.cat-slider::-moz-range-thumb{width:15px;height:15px;border-radius:50%;background:#fff;border:.5px solid rgba(0,0,0,.15);box-shadow:0 1px 4px rgba(0,0,0,.28)}\n.cat-slider.accent::-webkit-slider-runnable-track{background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base))}"
+   ]
+  },
+  "qt": {
+   "widget": "QSlider",
+   "qss": [
+    "QSlider::groove:horizontal{height:4px;border-radius:{$size.radius.pill$};background:rgba(0,0,0,36)}",
+    "QSlider::sub-page:horizontal{background:{$color.accent.base$};border-radius:{$size.radius.pill$}}",
+    "QSlider::handle:horizontal{width:15px;height:15px;margin:-6px 0;border-radius:{$size.radius.pill$};background:white;border:0.5px solid rgba(0,0,0,38)}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<input class=\"cat-slider\" type=\"range\" value=\"40\">",
+   "<input class=\"cat-slider accent\" type=\"range\" value=\"70\">"
+  ]
+ },
+ "guidance": {
+  "use": [
+   "Valores continuos donde la precision exacta no es critica (volumen, brillo)."
+  ],
+  "avoid": [
+   "Rangos discretos largos: mejor select."
+  ],
+  "rules": [
+   "Thumb grande: la zona interactiva supera al elemento visual."
+  ]
+ }
+}

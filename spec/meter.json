@@ -1,0 +1,25 @@
+{
+ "name": "meter",
+ "description": "Medidor semantico (disco, RAM): verde/amarillo/rojo segun umbral.",
+ "targets": {
+  "web": {
+   "markup": "<div class=\"cat-meter warn\" data-value=\"78%\"><div class=\"fill\" style=\"width:78%\"></div></div>",
+   "css": [
+    "\n.cat-meter{width:200px;height:5px;border-radius:var(--cat-size-radius-pill);background:rgba(0,0,0,.10);overflow:hidden}\n.cat-meter>.fill{height:100%;border-radius:inherit;background:var(--cat-color-success);transition:width var(--cat-motion-slow) var(--cat-motion-ease-out),background var(--cat-motion-med)}\n.cat-meter.warn>.fill{background:var(--cat-color-warning)}\n.cat-meter.danger>.fill{background:var(--cat-color-danger-base)}\n.cat-meter.labeled{position:relative}\n.cat-meter-label{display:flex;justify-content:space-between;font-size:var(--cat-font-size-xs);color:var(--cat-color-ink-low);margin-top:4px}"
+   ]
+  },
+  "qt": {
+   "widget": "QProgressBar",
+   "qss": [
+    "QProgressBar[cat=\"meterWarn\"]::chunk{background:{$color.warning$}}",
+    "QProgressBar[cat=\"meterDanger\"]::chunk{background:{$color.danger.base$}}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<div><div class=\"cat-meter\"><div class=\"fill\" style=\"width:34%\"></div></div><div class=\"cat-meter-label\"><span>Disco</span><span>34%</span></div></div>",
+   "<div><div class=\"cat-meter danger\"><div class=\"fill\" style=\"width:91%\"></div></div><div class=\"cat-meter-label\"><span>RAM</span><span>91%</span></div></div>"
+  ]
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "name": "switch",
+ "description": "Toggle binario estilo macOS. CSS puro sobre checkbox nativo (accesible).",
+ "states": [
+  "checked",
+  "unchecked",
+  "focus-visible",
+  "disabled"
+ ],
+ "targets": {
+  "web": {
+   "markup": "<label class=\"cat-switch\"><input type=\"checkbox\" checked><span class=\"track\"></span></label>",
+   "css": [
+    "\n.cat-switch{position:relative;display:inline-block;width:38px;height:22px;cursor:pointer}\n.cat-switch input{opacity:0;width:0;height:0;position:absolute}\n.cat-switch .track{position:absolute;inset:0;border-radius:var(--cat-size-radius-pill);background:rgba(120,120,128,.32);transition:background var(--cat-motion-med) ease;box-shadow:inset 0 0 0 .5px rgba(0,0,0,.04)}\n.cat-switch .track::after{content:\"\";position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.22),0 0 0 .5px rgba(0,0,0,.04);transition:transform var(--cat-motion-slow) var(--cat-motion-spring)}\n.cat-switch input:checked+.track{background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base))}\n.cat-switch input:checked+.track::after{transform:translateX(16px)}\n.cat-switch input:focus-visible+.track{box-shadow:0 0 0 var(--cat-size-border-focus-ring) var(--cat-semantic-accent-ring)}\n.cat-switch input:disabled+.track{opacity:.5;cursor:not-allowed}"
+   ]
+  },
+  "qt": {
+   "widget": "QCheckBox",
+   "qss": [
+    "QCheckBox::indicator{width:38px;height:22px;border-radius:{$size.radius.pill$};background:rgba(120,120,128,82)}",
+    "QCheckBox::indicator:checked{background:{$color.success$}}",
+    "QCheckBox::indicator:disabled{opacity:0.4}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<label class=\"cat-switch\"><input type=\"checkbox\" checked><span class=\"track\"></span></label>",
+   "<label class=\"cat-switch\"><input type=\"checkbox\"><span class=\"track\"></span></label>",
+   "<label class=\"cat-switch\"><input type=\"checkbox\" disabled><span class=\"track\"></span></label>"
+  ]
+ },
+ "guidance": {
+  "use": [
+   "Preferencias que aplican INMEDIATAMENTE al togglear."
+  ],
+  "avoid": [
+   "Opciones que requieren confirmar con un boton: usa checkbox."
+  ],
+  "rules": [
+   "Label siempre a la izquierda del control en listas de ajustes."
+  ]
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "name": "sidebar-nav",
+ "description": "Navegación lateral con item activo lleno (Finder-style) y árbol expandible.",
+ "targets": {
+  "web": {
+   "markup": "<aside class=\"cat-sidebar\"><div class=\"cat-nav-item active\"><span class=\"ni-icon\">*</span>Documents</div><div class=\"cat-section\">Locations</div><div class=\"cat-nav-item\"><span class=\"ni-icon\">o</span>Network</div></aside>",
+   "css": [
+    "\n.cat-sidebar{display:flex;flex-direction:column;gap:2px;width:216px;padding:10px 8px;background:rgba(250,250,253,.45);border-right:1px solid var(--cat-color-stroke-softer);font-family:var(--cat-font-family-ui)}\n.cat-nav-item{display:flex;align-items:center;gap:9px;height:30px;padding:0 9px;border-radius:var(--cat-size-radius-sm);font-size:var(--cat-font-size-base);color:var(--cat-color-ink-mid);cursor:pointer;user-select:none;transition:background var(--cat-motion-fast),color var(--cat-motion-fast)}\n.cat-nav-item:hover{background:rgba(255,255,255,.5);color:var(--cat-color-ink-hi)}\n.cat-nav-item.active{background:var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));color:#fff;font-weight:var(--cat-font-weight-medium);box-shadow:0 1px 2px rgba(0,0,0,.12)}\n.cat-nav-item.active .ni-icon{color:#fff}\n.ni-icon{width:15px;display:grid;place-items:center;opacity:.75}\n.cat-nav-item.active .ni-icon{opacity:1}\n.cat-chevron{margin-left:auto;transition:transform var(--cat-motion-med) var(--cat-motion-ease-out);font-size:9px;color:var(--cat-color-ink-faint)}\n.cat-nav-item[aria-expanded=\"true\"] .cat-chevron{transform:rotate(180deg)}\n.cat-sub{display:none;flex-direction:column;gap:2px;padding:2px 0 2px 30px}\n.cat-nav-item[aria-expanded=\"true\"]+.cat-sub{display:flex}\n.cat-sub .cat-nav-item{height:27px;font-size:var(--cat-font-size-md)}\n.cat-section{padding:0 12px;margin:14px 0 4px;font:600 var(--cat-font-size-xs) var(--cat-font-family-ui);letter-spacing:.06em;text-transform:uppercase;color:var(--cat-color-ink-faint)}"
+   ]
+  },
+  "qt": {
+   "widget": "QListWidget",
+   "qss": [
+    "QListWidget{background:transparent;border:none;font-size:{$font.size.base$};color:{$color.ink.mid$};outline:none}",
+    "QListWidget::item{height:30px;border-radius:{$size.radius.sm$};padding-left:9px}",
+    "QListWidget::item:hover{background:rgba(255,255,255,130);color:{$color.ink.hi$}}",
+    "QListWidget::item:selected{background:{$color.accent.base$};color:white}"
+   ]
+  }
+ },
+ "docs": {
+  "demos": [
+   "<aside class=\"cat-sidebar\" style=\"border-radius:12px;border:1px solid rgba(255,255,255,.5)\"><div class=\"cat-nav-item\"><span class=\"ni-icon\">+</span>Home</div><div class=\"cat-nav-item active\"><span class=\"ni-icon\">#</span>Documents<span class=\"cat-chevron\">▾</span></div><div class=\"cat-sub\"><div class=\"cat-nav-item\">Projects</div><div class=\"cat-nav-item\">Backups</div></div><div class=\"cat-section\">Locations</div><div class=\"cat-nav-item\"><span class=\"ni-icon\">~</span>Network</div></aside>"
+  ]
+ },
+ "guidance": {
+  "use": [
+   "Navegacion primaria persistente entre vistas."
+  ],
+  "avoid": [
+   "Mas de ~8 items de primer nivel: agrupa en secciones."
+  ],
+  "rules": [
+   "Item activo lleno con accent; icono hereda blanco."
+  ]
+ }
+}

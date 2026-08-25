@@ -1,0 +1,32 @@
+{
+ "name": "segmented",
+ "description": "Control segmentado estilo macOS. CSS-only via radios (accesible).",
+ "targets": {
+  "web": {
+   "markup": "<div class=\"cat-segmented\" data-cat-segmented role=\"radiogroup\" aria-label=\"Vista\"><button type=\"button\" class=\"seg-btn is-active\" aria-pressed=\"true\">Icons</button><button type=\"button\" class=\"seg-btn\" aria-pressed=\"false\">List</button><button type=\"button\" class=\"seg-btn\" aria-pressed=\"false\">Gallery</button></div>",
+   "css": [
+    "\n.cat-segmented{position:relative;display:inline-flex;padding:2px;border-radius:9px;background:rgba(120,120,128,.14);gap:2px;font-family:var(--cat-font-family-ui)}\n.cat-segmented>.cat-glider{top:2px;bottom:2px;left:0;border-radius:7px;background:var(--cat-semantic-seg-checked);box-shadow:0 1px 3px rgba(0,0,0,.14),0 0 0 .5px rgba(0,0,0,.04);transition:transform 240ms var(--cat-motion-spring),width 240ms var(--cat-motion-spring),opacity 150ms ease;opacity:0;z-index:0;width:max-content}\n.seg-btn{position:relative;z-index:1;display:inline-flex;align-items:center;height:26px;padding:0 13px;border-radius:7px;border:none;background:none;font:500 var(--cat-font-size-sm) var(--cat-font-family-ui);color:var(--cat-color-ink-mid);cursor:pointer;user-select:none;transition:color var(--cat-motion-fast) ease}\n.seg-btn:hover{color:var(--cat-color-ink-hi)}\n.seg-btn.is-active{color:var(--cat-color-ink-hi);font-weight:600}\n.seg-btn:focus-visible{outline:2px solid var(--cat-semantic-accent-dynamic,var(--cat-color-accent-base));outline-offset:-2px;border-radius:7px}"
+   ]
+  },
+  "qt": {
+   "widget": "QButtonGroup (exclusive)",
+   "qss": []
+  }
+ },
+ "docs": {
+  "demos": [
+   "<div class=\"cat-segmented\" data-cat-segmented role=\"radiogroup\"><button type=\"button\" class=\"seg-btn is-active\" aria-pressed=\"true\">Icons</button><button type=\"button\" class=\"seg-btn\" aria-pressed=\"false\">List</button><button type=\"button\" class=\"seg-btn\" aria-pressed=\"false\">Gallery</button></div>"
+  ]
+ },
+ "guidance": {
+  "use": [
+   "Cambiar modo de vista de un mismo contenido."
+  ],
+  "avoid": [
+   "Destinos de navegacion distintos: tabs."
+  ],
+  "rules": [
+   "2-5 segmentos; textos cortos, nunca iconos solos si son ambiguos."
+  ]
+ }
+}
