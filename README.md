@@ -1,8 +1,10 @@
 # Catalinas Design System
 
+![example dekstop](./image.png)
+
 Design system multi-plataforma con un unico source de verdad: `tokens/tokens.json` + `spec/*.json` compilan a Web (CSS/JS), React, Vue 3, Qt (QSS/Python), Flutter, Tailwind y Figma.
 
-**Autor:** Arcynox · **Version:** 0.8.1 · **Licencia:** MIT con atribucion (ver LICENSE)
+**Autor:** Arcynox - Luigi Adducci · **Version:** 0.8.1 · **Licencia:** MIT con atribucion (ver LICENSE)
 
 ---
 
